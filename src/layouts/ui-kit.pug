@@ -1,0 +1,10 @@
+include ../components/example-component/example-component
+
+doctype html
+html(lang="ru")
+  include ../components/head/head
+  body
+    header.ui-kit-header.header-ui-kit
+      div.header-ui-kit__logo
+        img.header-ui-kit__img(src="img/logo.svg" alt="logo")
+    block content
