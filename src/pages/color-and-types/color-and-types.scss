@@ -1,0 +1,143 @@
+@use '../../assets/styles/internals/index';
+
+.ui-color-type {
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 113.9rem;
+    margin: 0 auto;
+  }
+}
+
+.ui-color {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  max-width: 28.1rem;
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 4rem;
+  }
+
+  &__square {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 0.6rem;
+
+    &--100 {
+      background-color: $dark-shade-100;
+    }
+
+    &--75 {
+      background-color: $dark-shade-75;
+    }
+
+    &--50 {
+      background-color: $dark-shade-50;
+    }
+
+    &--25 {
+      background-color: $dark-shade-25;
+    }
+
+    &--5 {
+      background-color: $dark-shade-5;
+    }
+
+    &--purple {
+      background-color: $purple;
+    }
+    
+    &--green {
+      background-color: $green;
+    }
+  }
+
+  &__title {
+    @include fontz(1.9rem, 1.47, $dark-shade-100);
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    @include fontz(1.9rem, 1.47, $dark-shade-100);
+    font-weight: 400;
+  }
+}
+
+.ui-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 5.1rem;
+  max-width: 44.3rem;
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 3rem;
+  }
+
+  &__title {
+    min-width: 3.7rem;
+
+    color: $dark-shade-25;
+    text-align: right;
+
+    &--h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+    }
+
+    &--h2 {
+      font-size: 1.9rem;
+      line-height: 1.21;
+    }
+
+    &--h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    &--body {
+      font-size: 1.4rem;
+      line-height: 1.71;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    color: $dark-shade-100;
+
+    &--h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+    }
+
+    &--h2 {
+      font-size: 1.9rem;
+      line-height: 1.21;
+    }
+
+    &--h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.12rem;
+      text-transform: uppercase;
+    }
+
+    &--body {
+      max-width: 31rem;
+
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.71;
+      color: $dark-shade-75;
+    }
+  }
+}

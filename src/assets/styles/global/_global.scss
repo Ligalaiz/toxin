@@ -145,3 +145,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px $white-color inset !important;
 }
+
+@import '../../../layouts/ui-kit';
+@import '../../../pages/color-and-types/color-and-types';

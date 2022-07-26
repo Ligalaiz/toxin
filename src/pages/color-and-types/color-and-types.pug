@@ -1,0 +1,41 @@
+extends ../../layouts/ui-kit
+
+block content
+  -
+    var colors = [
+      {title: 'Dark Shade 100%', subtitle: '#1F2041', color: '100'},
+      {title: 'Dark Shade 75%', subtitle: '#1F2041', color: '75'},
+      {title: 'Dark Shade 50%', subtitle: '#1F2041', color: '50'},
+      {title: 'Dark Shade 25%', subtitle: '#1F2041', color: '25'},
+      {title: 'Dark Shade 5%', subtitle: '#1F2041', color: '5'},
+      {title: 'Purple', subtitle: '#BC9CFF', color: 'purple'},
+      {title: 'Green', subtitle: '#6FCF97', color: 'green'},
+    ];
+
+    const types = [
+      {title: 'H1', subtitle: 'This one is the sub-section or widget title', type: 'h1'},
+      {title: 'H2', subtitle: 'Next one is the item title inside widgets', type: 'h2'},
+      {title: 'H3', subtitle: 'This is a label or CTA text', type: 'h3'},
+      {
+        title: 'Body',
+        subtitle: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.',
+        type: 'body'
+      },
+    ];
+
+  main
+    section.ui-color-type
+      h2.visually-hidden 'Color and Type'
+      .ui-color-type__wrap
+        ul.reset-list.ui-color
+          each val in colors
+            li.ui-color__item
+              .ui-color__square(class=`ui-color__square--${val.color}`)
+              .ui-color__desc
+                .ui-color__title= val.title
+                .ui-color__subtitle= val.subtitle
+        ul.reset-list.ui-type
+          each val in types
+            li.ui-type__item
+              .ui-type__title(class=`ui-type__title--${val.type}`)= val.title
+              .ui-type__subtitle(class=`ui-type__subtitle--${val.type}`)= val.subtitle
