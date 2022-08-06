@@ -1,0 +1,49 @@
+@use '../../assets/styles/internals/index';
+
+.checkbox {
+  &__title {
+    margin-bottom: 0.8rem;
+
+    @include header-3;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__label {
+    @include fontz(1.4rem, 1.28, $dark-shade-50);
+  }
+
+  &__field {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    & + label {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    & + label::before {
+      content: '';
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid $dark-shade-25;
+      border-radius: 0.4rem;
+      margin-right: 1rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+
+    &:checked + label::before {
+      border-color: $purple;
+      background-image: url('../../img/yes.svg');
+    }
+  }
+}
