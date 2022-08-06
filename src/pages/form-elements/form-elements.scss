@@ -1,0 +1,19 @@
+@use '../../assets/styles/internals/index';
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.inputs {
+  max-width: 32rem;
+  width: 100%;
+
+  &--date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+}
