@@ -1,0 +1,7 @@
+mixin checkbox(option)
+  - const { title = '', content = '', cls = '', status = false } = option
+
+  .checkbox
+    p.checkbox__title= title
+    input(type='checkbox' class=`checkbox__field ${cls}-checkbox` name=`${cls}` value='yes' id=`${cls}Checkbox` checked=status)
+    label.checkbox__label(for=`${cls}Checkbox`)= content
