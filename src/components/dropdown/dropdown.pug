@@ -1,0 +1,9 @@
+mixin dropdown(attr)
+  -
+    const { title='', content='', cls='' } = attr
+    let style = ''
+    if (content === 'дд.мм.гггг') style = 'dropdown__btn--choiced'
+
+  .dropdown
+    p.dropdown__title= title
+    button(type="button" class=`dropdown__btn ${cls}-dropdown ${style}`)= content
