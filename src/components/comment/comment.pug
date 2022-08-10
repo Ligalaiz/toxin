@@ -1,0 +1,16 @@
+include ../like-button/like-button
+
+mixin comment(option = {})
+  -
+    const { title = '', content = '', day = '', feedback = '' } = option;
+
+  .comment
+    .comment__head
+      .comment__img.img-comment
+        img.img-comment__img(src="./assets/img/image.png", alt="")
+      .comment__desc
+        .comment__title= title
+        .comment__day= `${day} дней назад`
+    .comment__main
+      +like-button({ content, status: true, cls: 'comment' })
+      .comment__feedback= feedback

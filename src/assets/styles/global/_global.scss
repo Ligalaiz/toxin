@@ -6,11 +6,15 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100%;
+  width: 100%;
 }
 
 * {
   box-sizing: inherit;
   outline: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 ::before {
@@ -47,9 +51,14 @@ p {
   font-size: 10px;
 }
 
+:focus,
+:active {
+  outline: none;
+}
+
 .container {
   width: 100%;
-  max-width: 192rem;
+  max-width: 114rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -64,12 +73,13 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: 400;
-  @include fontz(1.6rem, 2.4, $dark-shade-100);
+  @include fontz(1.6rem, 1, $dark-shade-100);
 
-  background-color: $white-color;
+  background-color: $white;
 
   user-select: none;
   -webkit-font-smoothing: antialiased;
@@ -77,6 +87,15 @@ body {
 
 a {
   text-decoration: none;
+  &:visited,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
 
 img,
@@ -116,7 +135,7 @@ svg {
   }
 }
 
-.reset-list {
+ul li {
   margin: 0;
   padding: 0;
 
@@ -135,16 +154,43 @@ svg {
 ::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
 
-  background: $dark-shade-5;
+  background: $dark-shade-50;
   background-clip: padding-box;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  border: 0;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $white-color inset !important;
+  -webkit-box-shadow: 0 0 0 30px $white inset !important;
 }
 
 @import '../../../layouts/ui-kit';
 @import '../../../pages/color-and-types/color-and-types';
+@import '../../../pages/form-elements/form-elements';
+@import '../../../components/dropdown/dropdown';
+@import '../../../components/input/input';
+@import '../../../components/checkbox/checkbox';
+@import '../../../components/radio/radio';
+@import '../../../components/toggle/toggle';
+@import '../../../components/like-button/like-button';
+@import '../../../components/rating/rating';
+@import '../../../components/range/range';
+@import '../../../components/button/button';
+@import '../../../components/pagination/pagination';
+@import '../../../components/rich-checkbox/rich-checkbox';
+@import '../../../components/bullet-list/bullet-list';
+@import '../../../components/options/options';
+@import '../../../components/comment/comment';

@@ -1,0 +1,47 @@
+@use '../../assets/styles/internals/index';
+
+.options {
+  position: relative;
+
+  max-width: 27.4rem;
+  width: 100%;
+  padding: 0.9rem 1.7rem 1.6rem 6rem;
+  border-bottom: 0.1rem solid $dark-shade-5;
+  margin-bottom: 1.5rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 41%;
+    left: 0.4rem;
+
+    width: 4rem;
+    height: 4rem;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+  }
+
+  &--emotion:before {
+    background-image: url('../../img/emotion.svg');
+  }
+
+  &--location:before {
+    background-image: url('../../img/location.svg');
+  }
+
+  &__content,
+  &__title {
+    @include text;
+    color: $dark-shade-75;
+  }
+  &__content {
+    color: $dark-shade-75;
+  }
+
+  &__title {
+    color: $dark-shade-100;
+    font-weight: 700;
+  }
+}

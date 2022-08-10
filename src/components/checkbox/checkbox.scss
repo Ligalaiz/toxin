@@ -1,0 +1,63 @@
+@use '../../assets/styles/internals/index';
+
+.checkbox {
+  &__title {
+    margin-bottom: 1.6rem;
+
+    @include header-3;
+  }
+
+  &__label {
+    position: relative;
+
+    display: inline-flex;
+    align-items: flex-start;
+
+    @include fontz(1.4rem, 1.28, $dark-shade-50);
+
+    &--rich {
+      display: flex;
+      align-items: flex-start;
+
+      color: $dark-shade-100;
+      font-weight: 700;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 0.4rem;
+
+    line-height: 1.5;
+  }
+
+  &__text {
+    @include fontz(1.2rem, 1.16, $dark-shade-50);
+    font-weight: 400;
+  }
+
+  &__field {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    & + label::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 0.1rem solid $dark-shade-25;
+      border-radius: 0.4rem;
+      margin-right: 1rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+
+    &:checked + label::before {
+      border-color: $purple;
+      background-image: url('../../img/yes.svg');
+    }
+  }
+}
