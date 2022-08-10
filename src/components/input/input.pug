@@ -6,10 +6,10 @@ mixin input(attr)
       text: '',
       date: ''
     }
-  label.field(class=`field--${modify}`)
+  label.field(class=`${modify ? `field--${modify}` : ''}`)
     .field__wrap
-      p(class='field__label')= label
-      p(class='field__desc')= desc
+      p.field__label= label
+      p.field__desc= desc
     if (modify === 'substr')
       button.field__btn
     input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`)
