@@ -1,0 +1,79 @@
+@use '../../assets/styles/internals/index';
+
+.toggle {
+  &__title {
+    margin-bottom: 1.6rem;
+
+    @include header-3;
+    letter-spacing: -0.1px;
+  }
+
+  &__text {
+    display: block;
+    min-width: 21rem;
+    max-width: 25rem;
+    width: 100%;
+  }
+
+  &__label {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    width: 4rem;
+    height: 2rem;
+    padding-left: 5rem;
+    border-radius: 3.4rem;
+
+    @include fontz(1.4rem, 1.28, $dark-shade-50);
+  }
+
+  &__control {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    max-width: 4rem;
+    border: 0.1rem solid $dark-shade-50;
+    border-radius: 3.4rem;
+
+    transition: $anim;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0.4rem;
+      bottom: 0.3rem;
+
+      height: 1.2rem;
+      width: 1.2rem;
+      border-radius: 50%;
+
+      background-color: $dark-shade-50;
+
+      transition: $anim;
+    }
+  }
+
+  &__field {
+    width: 0;
+    height: 0;
+
+    opacity: 0;
+
+    &:checked + .circle:before {
+      background: linear-gradient(180deg, $purple 0%, $blue 100%);
+      opacity: 0.7;
+    }
+    &:checked + .circle {
+      border-color: $purple;
+    }
+    &:checked + .circle:before {
+      transform: translateX(1.8rem);
+    }
+  }
+}
