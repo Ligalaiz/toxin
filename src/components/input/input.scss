@@ -5,19 +5,17 @@
 
   display: block;
   max-width: 32rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
 
   &__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.3rem;
   }
 
   &__label {
-    @include fontz(1.2rem, 1.25, $dark-shade-100);
-    font-weight: 700;
-    text-transform: uppercase;
+    @include header-3;
   }
 
   &__desc {
@@ -31,7 +29,7 @@
     width: 100%;
     border-radius: 0.4rem;
     border: 1px solid $dark-shade-25;
-    padding: 1.5rem 1.3rem;
+    padding: 1.5rem 1.4rem 1.3rem;
 
     &::placeholder {
       @include fontz(1.4rem, 1.28, $dark-shade-25);
@@ -77,8 +75,13 @@
 
       background-color: $dark-shade-50;
 
-      transform: translateY(-50%)
+      transform: translateY(-50%);
     }
+  }
+
+  &--substr {
+    max-width: 26.6rem;
+    padding-top: 1.9rem;
   }
 }
 
