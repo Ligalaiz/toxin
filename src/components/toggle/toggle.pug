@@ -1,0 +1,10 @@
+mixin toggle(option)
+  - const { title = '', content = '', status = false } = option
+
+  .toggle
+    if title !== ''
+      p.toggle__title= title
+    label.toggle__label(class='switch')
+      span.toggle__text= content
+      input.toggle__field(type='checkbox' checked = status)
+      span.toggle__control.circle
