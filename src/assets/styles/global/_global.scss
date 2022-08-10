@@ -79,7 +79,7 @@ body {
   font-weight: 400;
   @include fontz(1.6rem, 1, $dark-shade-100);
 
-  background-color: $white-color;
+  background-color: $white;
 
   user-select: none;
   -webkit-font-smoothing: antialiased;
@@ -154,7 +154,7 @@ ul li {
 ::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
 
-  background: $dark-shade-5;
+  background: $dark-shade-50;
   background-clip: padding-box;
 }
 
@@ -174,7 +174,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $white-color inset !important;
+  -webkit-box-shadow: 0 0 0 30px $white inset !important;
 }
 
 @import '../../../layouts/ui-kit';
@@ -184,3 +184,13 @@ input:-webkit-autofill:active {
 @import '../../../components/input/input';
 @import '../../../components/checkbox/checkbox';
 @import '../../../components/radio/radio';
+@import '../../../components/toggle/toggle';
+@import '../../../components/like-button/like-button';
+@import '../../../components/rating/rating';
+@import '../../../components/range/range';
+@import '../../../components/button/button';
+@import '../../../components/pagination/pagination';
+@import '../../../components/rich-checkbox/rich-checkbox';
+@import '../../../components/bullet-list/bullet-list';
+@import '../../../components/options/options';
+@import '../../../components/comment/comment';
