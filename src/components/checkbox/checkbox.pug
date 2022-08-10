@@ -1,7 +1,12 @@
-mixin checkbox(option)
-  - const { title = '', content = '', cls = '', status = false } = option
+mixin checkbox(option = {})
+  - const { title = '', content = '', subcontent = '', cls = '', status = false, type = '' } = option
 
   .checkbox
-    p.checkbox__title= title
+    if title !== ''
+      p.checkbox__title= title
     input(type='checkbox' class=`checkbox__field ${cls}-checkbox` name=`${cls}` value='yes' id=`${cls}Checkbox` checked=status)
-    label.checkbox__label(for=`${cls}Checkbox`)= content
+    label.checkbox__label(for=`${cls}Checkbox`, class=`${type === 'rich' ? 'checkbox__label--rich' : ''}`)
+      .checkbox__desc
+        p.checkbox__subtitle= content
+        if type === 'rich'
+          p.checkbox__text= subcontent
