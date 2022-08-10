@@ -1,0 +1,110 @@
+@use '../../assets/styles/internals/index';
+
+.button {
+  &__title {
+    margin-bottom: 1.6rem;
+
+    @include header-3;
+  }
+
+  &__target {
+    height: 4.4rem;
+    padding: 1.5rem 1.9rem;
+    border-radius: 2.2rem;
+
+    @include fontz(1.2rem, 1.25, $white);
+    text-transform: uppercase;
+    font-weight: 700;
+
+    background: linear-gradient(180deg, $purple 0%, $blue 100%);
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
+.button-thin {
+  position: relative;
+
+  border: 2px solid;
+  padding: 1.5rem 1.7rem;
+
+  color: $purple;
+
+  background: $white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+
+    border-radius: 3.4rem;
+
+    background: linear-gradient(180deg, $purple 0%, $blue 100%);
+    z-index: -1;
+  }
+
+  &--disabled {
+    color: $purple-50;
+
+    cursor: default;
+
+    &:before {
+      background: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
+    }
+  }
+}
+
+.button-text {
+  border: none;
+  padding: 0;
+  height: 1.4rem;
+
+  color: $purple;
+
+  background: transparent;
+
+  &--disabled {
+    color: $dark-shade-50;
+  }
+}
+
+.button-pay {
+  position: relative;
+
+  width: 100%;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+  }
+
+  &:before {
+    right: 1.5rem;
+
+    width: 1rem;
+    height: 1rem;
+    border-right: 0.2rem solid $white;
+    border-bottom: 0.2rem solid $white;
+
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &:after {
+    right: 1.5rem;
+
+    width: 1.6rem;
+    height: 0.2rem;
+
+    background-color: $white;
+
+    transform: translateY(-50%);
+  }
+}
