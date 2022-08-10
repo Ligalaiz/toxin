@@ -1,14 +1,14 @@
 mixin radio(option)
   -
-    const { title = '', content = {}, cls = '' } = option
+    const { title = '', content = {}, cls = '', status = 'men' } = option
     const { men = '', women = '' } = content;
 
   .radio
     p.radio__title= title
     .radio__list
       .radio__item
-        input(type='radio' name="color" class=`radio__field` id=`menRadio` value='men' checked=status)
-        label.checkbox__label(for=`menRadio`)= men
+        input(type='radio' name="color" class=`radio__field` id=`menRadio` value='men' checked=status === 'men')
+        label.radio__label(for=`menRadio`)= men
       .radio__item
-        input(type='radio' name="color" class=`radio__field`, id=`womenRadio` value='women' checked=status)
+        input(type='radio' name="color" class=`radio__field`, id=`womenRadio` value='women' checked= status === 'women')
         label.radio__label(for=`womenRadio`)= women
