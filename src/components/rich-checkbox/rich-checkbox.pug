@@ -1,0 +1,8 @@
+include ../checkbox/checkbox
+
+mixin rich-checkbox(option = {})
+  -
+    const { title = '', content = '', subcontent = '', cls = '' } = option
+
+  .rich-checkbox
+    +checkbox({ title, content, subcontent, cls, type: 'rich' })

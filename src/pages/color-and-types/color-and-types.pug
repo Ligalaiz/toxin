@@ -1,5 +1,8 @@
 extends ../../layouts/ui-kit
 
+block title
+  | color and types
+
 block content
   -
     var colors = [
@@ -27,14 +30,14 @@ block content
     section.ui-color-type
       h2.visually-hidden 'Color and Type'
       .ui-color-type__wrap
-        ul.reset-list.ui-color
+        ul.ui-color
           each val in colors
             li.ui-color__item
               .ui-color__square(class=`ui-color__square--${val.color}`)
               .ui-color__desc
                 .ui-color__title= val.title
                 .ui-color__subtitle= val.subtitle
-        ul.reset-list.ui-type
+        ul.ui-type
           each val in types
             li.ui-type__item
               .ui-type__title(class=`ui-type__title--${val.type}`)= val.title
