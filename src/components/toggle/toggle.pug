@@ -1,7 +1,7 @@
 mixin toggle(option)
-  - const { title = '', content = '', status = false } = option
+  - const { title = '', content = '', status = false, modify = '' } = option
 
-  .toggle
+  .toggle(class=`${ modify ? ` ${modify}` : '' }`)
     if title !== ''
       p.toggle__title= title
     label.toggle__label(class='switch')

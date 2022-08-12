@@ -1,0 +1,11 @@
+include ../../components/input/input
+
+mixin sign-in-card
+  .sign-in-card
+    .sign-in-card__title Войти
+    +input({ placeholder: 'Email', cls: 'sign-in-card-mail' })
+    +input({  placeholder: 'Пароль', cls: 'sign-in-card-pass' })
+    +button({ content: 'Войти', type: 'pay', cls: 'sign-in-card', modify: 'sign-in-card__pay-btn'})
+    .sign-in-card__wrap
+      p.sign-in-card__text Нет аккаунта на Toxin?
+      +button({ content: 'Создать', type: 'thin', cls: 'search-card', modify: 'sign-in-card__sign-in-btn'})
