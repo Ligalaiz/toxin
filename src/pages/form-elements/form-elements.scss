@@ -54,6 +54,13 @@
     margin-bottom: 1.7rem;
   }
 
+  &__rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
   &--middle {
     padding-left: 2.9rem;
   }
