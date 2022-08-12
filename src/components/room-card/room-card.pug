@@ -1,0 +1,28 @@
+include ../../components/rating/rating
+
+mixin room-card(option = {})
+  -
+    const {numb = '0', type = '', count = '0', rate = 4, price = '' } = option
+
+  .room-card
+    .room-card__img
+      img(src=`../../assets/img/room-${numb}.jpg`, alt='room')
+    .room-card__desc
+      .room-card__wrap
+        p.room-card__title
+          span.room-card__title--small №
+          | 
+          span.room-card__title--thick= numb
+          |
+          if type !== ''
+            span.room-card__title--color= type
+        p.room-card__subtitle
+          span.room-card__subtitle--thick= price
+          |₽
+          |
+          | в сутки
+      .room-card__rating.rating-room-card
+        +rating({ checked: rate, name: `room-${numb}` })
+        p.rating-room-card__text= count
+          |
+          span.rating-room-card__text--thin Отзывов
