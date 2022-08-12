@@ -23,14 +23,14 @@ block content
       .content__wrap
         .content__item.item-content.item-content--left
           +input({ type: 'email', placeholder: 'Email', cls: 'default', label: 'Text field', desc: 'Default' })
-          +input({ type: 'email', placeholder: 'Email', cls: 'active', label: 'Text field', desc: 'Hover/Focus', val: 'This is pretty awesome' })
+          +input({ placeholder: 'Email', cls: 'active', label: 'Text field', desc: 'Hover/Focus', val: 'This is pretty awesome' })
           +dropdown({ title: 'Dropdown', content: 'Сколько гостей', cls: 'guest' })
-          +input({ type: 'email', placeholder: 'дд.мм.гггг', cls: 'masked', label: 'Masked Text field' })
+          +input({ placeholder: 'дд.мм.гггг', cls: 'masked', label: 'Masked Text field' })
           .item-content__date
               +dropdown({ title: 'Date Dropdown', content: 'дд.мм.гггг', cls: 'date' })
               +dropdown({ title: 'Date Dropdown', content: '19.08.2019', cls: 'date' })
-          +dropdown({ title: 'Filter Date Dropdown', content: '19 авг - 23 авг', cls: 'filter-date', modify: 'filter' })
-          +input({ type: 'email', placeholder: 'Eamil', cls: 'subscr', label: 'Subscription Text field', modify: 'substr' })
+          +dropdown({ title: 'Filter Date Dropdown', content: '19 авг - 23 авг', cls: 'filter-date' })
+          +input({ type: 'email', placeholder: 'Eamil', cls: 'subscr', label: 'Subscription Text field' })
         .content__item.item-content.item-content--middle
           .item-content__checkbox-bar
             +checkbox({ title: 'Checkbox buttons', content: 'Можно курить', cls:'smoke' })
@@ -45,7 +45,9 @@ block content
             .like-btn__wrap
               +like-button({ content: '2' })
               +like-button({ content: '12', status: true })
-          +rating({ len: 5, title: 'Rate button' })
+          .item-content__rating
+            +rating({ title: 'Rate button', name: 'example-1', checked: 3 })
+            +rating({ name: 'example-2' })
         .content__item.item-content.item-content--right
           +range({ title: 'Range slider' })
           .item-content__btn-bar.bar-btn
@@ -62,14 +64,14 @@ block content
               +button({ content: 'Перейти к оплате', type: 'pay'})
           +pagination({ title: 'Pagination'})
         .content__item.content__item--bedroom
-          +dropdown({ title: 'Dropdown', desc: 'Default', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom', modify: 'bedroom' })
-          +dropdown({ title: 'Dropdown', desc: 'Expanded', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom', type: 'bedroom', status: true, modify: 'bedroom' })
+          +dropdown({ title: 'Dropdown', desc: 'Default', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom' })
+          +dropdown({ title: 'Dropdown', desc: 'Expanded', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom', type: 'bedroom', status: true })
         .content__item
           +dropdown({ title: 'Dropdown', content: 'Сколько гостей', cls: 'bedroom', type: 'guest', status: true })
         .content__item
           +dropdown({ title: 'Dropdown', content: '3 гостя', cls: 'bedroom', type: 'guest', status: true })
         .content__item.content__item--expand
-          +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand', modify: 'expand' })
+          +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand' })
           +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand', status: true })
         .content__item.content__item--rich
           +rich-checkbox({ title: 'Rich checkbox buttons', content: 'Широкий коридор', subcontent: 'Ширина коридора в номере не\u00A0менее 91 см.', cls: 'hall'})
