@@ -1,0 +1,141 @@
+@use '../../assets/styles/internals/index';
+
+.date-picker {
+  max-width: 32rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  margin-bottom: 4.2rem;
+
+  box-shadow: 0 0 2.5rem $black-20;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.2rem;
+  }
+
+  &__current {
+    @include fontz(1.9rem, 1.21, $dark-shade-100);
+    font-weight: 700;
+  }
+
+  &__week {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__prev,
+  &__next {
+    position: relative;
+
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+    }
+
+    &:before {
+      width: 1rem;
+      height: 1rem;
+      border-right: 0.2rem solid $purple;
+      border-bottom: 0.2rem solid $purple;
+    }
+
+    &:after {
+      width: 1.6rem;
+      height: 0.2rem;
+
+      background-color: $purple;
+
+      transform: translateY(-50%);
+    }
+  }
+
+  &__prev:before {
+    transform: translateY(-50%) rotate(130deg);
+    left: 18%;
+  }
+
+  &__prev:after {
+    left: 18%;
+  }
+
+  &__next:before {
+    transform: translateY(-50%) rotate(-45deg);
+    right: 18%;
+  }
+
+  &__next:after {
+    right: 18%;
+  }
+
+  &__main {
+    margin-bottom: 0.5rem;
+  }
+
+  &__month {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.8rem;
+    padding-top: 0.9rem;
+  }
+
+  &__btn {
+    @include header-3;
+    color: $purple;
+
+    background-color: transparent;
+  }
+}
+
+.week-picker {
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+
+    @include fontz(1.2rem, 1, $purple);
+    font-weight: 700;
+  }
+}
+
+.month-picker {
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+
+    @include fontz(1.2rem, 1, $dark-shade-50);
+
+    &--range {
+      border-radius: 50%;
+
+      background: linear-gradient(180deg, $purple 0%, $blue 100%);
+    }
+
+    &--picked {
+      border-radius: 50%;
+
+      background: linear-gradient(180deg, $green 0%, $blue-0 100%);
+    }
+  }
+}

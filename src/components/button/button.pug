@@ -1,6 +1,6 @@
 mixin button(option)
   -
-    const { content = '', title = '', status = '', type = 'default' } = option
+    const { content = '', title = '', status = '', type = 'default', cls = '', modify = '' } = option
 
     const typeClass = {
       thin: ' button-thin',
@@ -15,7 +15,7 @@ mixin button(option)
       default: ' button__target--disabled',
     }
 
-  .button-wrap
+  .button-wrap(class=`${ cls ? `button--${cls}` : '' }${ modify ? ` ${modify}` : '' }`)
     .button
       if title !== ''
         p.button__title= title

@@ -1,0 +1,12 @@
+include ../dropdown/dropdown
+include ../button/button
+
+mixin search-card(option = {})
+
+  .search-card
+    p.search-card__title Найдём номера под ваши пожелания
+    .search-card__wrap
+      +dropdown({ title: 'Прибытие', content: 'дд.мм.гггг', cls: 'date' })
+      +dropdown({ title: 'Выезд', content: 'дд.мм.гггг', cls: 'date' })
+    +dropdown({ title: 'Гости', content: 'Сколько гостей', cls: 'guest', type: 'guest', modify: 'search-card__dropdown' })
+    +button({ content: 'Подобрать номер', type: 'pay', cls: 'search-card'})

@@ -2,7 +2,7 @@ include ../checkbox/checkbox
 
 mixin dropdown(option = {})
   -
-    const { title='', content='', cls='', desc='', type='', status=false, modify='' } = option
+    const { title='', content='', cls='', desc='', type='', status=false, modify = '' } = option
     let style = ''
     if (content === 'дд.мм.гггг') style = ' dropdown__btn--choiced'
     const listMap  = {
@@ -12,7 +12,7 @@ mixin dropdown(option = {})
     };
     const list = listMap?.[type] || [];
 
-  .dropdown(class=`${ modify ? `dropdown--${modify}` : '' }`)
+  .dropdown(class=`${ cls ? `dropdown--${cls}` : '' }${ modify ? ` ${modify}` : '' }`)
     if type !== 'expand'
       .dropdown__wrap
         if title !== ''
