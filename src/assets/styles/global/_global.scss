@@ -135,7 +135,7 @@ svg {
   }
 }
 
-ul li {
+ul {
   margin: 0;
   padding: 0;
 
@@ -201,3 +201,6 @@ input:-webkit-autofill:active {
 @import '../../../components/sign-in-card/sign-in-card';
 @import '../../../components/room-card/room-card';
 @import '../../../components/date-picker-card/date-picker-card';
+@import '../../../pages/header-footer/header-footer';
+@import '../../../components/header/header';
+@import '../../../components/footer/footer';
