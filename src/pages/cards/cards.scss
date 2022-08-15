@@ -1,5 +1,11 @@
 @use '../../assets/styles/internals/index';
 
+.body {
+  &--cards {
+    background-color: $grey;
+  }
+}
+
 .cards {
   &__container {
     display: grid;

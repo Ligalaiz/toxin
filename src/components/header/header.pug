@@ -1,0 +1,49 @@
+include ../../components/button/button
+
+mixin header(option = {})
+  -
+    const { status = 'logout' } = option
+
+    const navList = [
+      {
+        title: 'О нас',
+        cls: 'about',
+      },
+      {
+        title: 'Услуги',
+        cls: 'service',
+      },
+      {
+        title: 'Вакансии',
+        cls: 'vacancy',
+      },
+      {
+        title: 'Новости',
+        cls: 'news',
+      },
+      {
+        title: 'Соглашение',
+        cls: 'agreement',
+      }
+    ]
+
+  .header
+    .header__container
+      .header__logo
+        img(src=`../../assets/img/full-logo.svg`, alt='logo')
+      .header__wrap
+        ul.header__nav
+          each val, key in navList
+            li.header__item(class=`${val.cls ? ` header__item--${val.cls}` : ''}${val.cls === 'about' ? ` active` : ''}`)= val.title
+        if status === 'logout'
+          .header__auth
+            +button({ content: 'войти', type: 'thin' })
+            +button({ content: 'Зарегистрироваться' })
+        if status === 'login'
+          .header__user
+            p Юлий Цезарь
+      .header__mobile.mobile-header
+        button.mobile-header__btn
+        ul.mobile-header__list
+          each val, key in navList
+            li.mobile-header__item(class=`${val.cls ? ` mobile-header__item--${val.cls}` : ''}${val.cls === 'about' ? ` active` : ''}`)= val.title

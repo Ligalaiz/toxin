@@ -9,7 +9,7 @@ mixin input(attr)
 
   label.field(class=`${cls ? `field--${cls}` : ''}${ modify ? ` ${modify}` : '' }`)
     .field__wrap
-      if lable !== ''
+      if label !== ''
         p.field__label= label
       if desc !== ''
         p.field__desc= desc
