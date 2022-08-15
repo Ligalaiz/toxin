@@ -11,7 +11,7 @@ mixin room-card(option = {})
       .room-card__wrap
         p.room-card__title
           span.room-card__title--small №
-          | 
+          |
           span.room-card__title--thick= numb
           |
           if type !== ''
@@ -23,6 +23,5 @@ mixin room-card(option = {})
           | в сутки
       .room-card__rating.rating-room-card
         +rating({ checked: rate, name: `room-${numb}` })
-        p.rating-room-card__text= count
-          |
+        p.rating-room-card__text= `${count}\u00A0`
           span.rating-room-card__text--thin Отзывов
