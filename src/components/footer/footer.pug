@@ -57,7 +57,7 @@ mixin footer(option = {})
       },
     ]
 
-  .footer(class=`${type === 'tablet' ? ` footer--tablet` : ' footer--desctop'}`)
+  .footer
     if type === 'desctop'
       .footer__wrap.footer__wrap--top
         .footer__container
@@ -86,8 +86,7 @@ mixin footer(option = {})
             +input({ type: 'email', placeholder: 'Eamil', cls: 'subscr' })
     .footer__wrap
       .footer__container.footer__copyright.copyright-footer(class=`${type === 'tablet' ? ' copyright-footer--tablet' : '' }`)
-        if type === 'tablet'
-          .footer__logo.copyright-footer__logo
+        .footer__logo.copyright-footer__logo(class=`${type === 'tablet' ? ` copyright-footer__logo--tablet` : ''}`)
             img(src=`../../assets/img/full-logo.svg`, alt='logo')
         .copyright-footer__text(class=`${type === 'tablet' ? ' copyright-footer__text--tablet' : '' }`) Copyright © 2018 Toxin отель. Все права защищены.
         .copyright-footer__social
