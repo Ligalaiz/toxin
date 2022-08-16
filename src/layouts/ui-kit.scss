@@ -1,0 +1,22 @@
+@use '../assets/styles/internals/index';
+
+.header-ui-kit {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 144rem;
+  padding: 3rem;
+  margin: 0 auto;
+  margin-bottom: 3.7rem;
+
+  &__logo {
+    position: relative;
+
+    width: 4.8rem;
+    padding-bottom: 4.8rem;
+  }
+
+  &--header-footer {
+    margin-bottom: 3.2rem;
+  }
+}

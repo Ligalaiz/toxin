@@ -1,0 +1,18 @@
+mixin input(attr)
+  -
+    const {type = 'text', placeholder = '', cls = '', label = '', val = '', desc = '', modify = '' } = attr;
+    const pattern = {
+      email: '[^ @]*@[^ @]*',
+      text: '',
+      date: ''
+    }
+
+  label.field(class=`${cls ? `field--${cls}` : ''}${ modify ? ` ${modify}` : '' }`)
+    .field__wrap
+      if label !== ''
+        p.field__label= label
+      if desc !== ''
+        p.field__desc= desc
+    if (modify === 'substr')
+      button.field__btn
+    input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`)

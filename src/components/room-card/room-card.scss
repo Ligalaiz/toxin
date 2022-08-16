@@ -1,0 +1,83 @@
+@use '../../assets/styles/internals/index';
+
+.room-card {
+  max-width: 27rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  margin-bottom: 3.9rem;
+
+  box-shadow: 0 0 2.5rem $black-20;
+  background-color: $white;
+
+  &__desc {
+    padding: 2.3rem 2rem 1.8rem;
+  }
+
+  &__img {
+    position: relative;
+
+    padding-top: 15.2rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+
+    @include fontz(1.2rem, 1.2, $dark-shade-100);
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &--small {
+      margin-right: 0.7rem;
+
+      text-transform: uppercase;
+    }
+
+    &--thick {
+      @include fontz(1.9rem, 1, $dark-shade-100);
+      letter-spacing: 0.03rem;
+    }
+
+    &--color {
+      color: $purple;
+    }
+  }
+
+  &__subtitle {
+    @include fontz(1.2rem, 1, $dark-shade-50);
+
+    &--thick {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  &__rating > .rating {
+    margin-top: unset;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.1rem solid $dark-shade-10;
+  }
+}
+
+.rating-room-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    @include fontz(1.4rem, 1, $dark-shade-50);
+    font-weight: 700;
+
+    &--thin {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+}

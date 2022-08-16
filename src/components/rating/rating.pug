@@ -1,0 +1,14 @@
+mixin rating(option = {})
+  -
+    const { len = 5, title = '', name = '', checked = 3, modify = '' } = option;
+    const result = len > 0 ? [...new Array(len).keys((_, i) => i)].reverse() : [];
+    const setChecked = (val) => val === checked;
+
+  .rating(class=`${ modify ? ` ${modify}` : '' }`)
+    if title !== ''
+      p.rating__title= title
+    .rating__container
+      .rating__wrap
+        each val, key in result
+          input.rating__field(type='radio' id=`rating-${val}-${name}` name=`rating-${name}` value=`${val}` checked=setChecked(val))
+          label(for=`rating-${val}-${name}`)

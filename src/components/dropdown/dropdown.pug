@@ -1,0 +1,41 @@
+include ../checkbox/checkbox
+
+mixin dropdown(option = {})
+  -
+    const { title='', content='', cls='', desc='', type='', status=false, modify = '' } = option
+    let style = ''
+    if (content === 'дд.мм.гггг') style = ' dropdown__btn--choiced'
+    const listMap  = {
+      guest: ['Взрослые', 'Дети', 'Младенцы'],
+      bedroom: ['Спальни', 'Кровати', 'Ванные комнаты'],
+      expand: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'],
+    };
+    const list = listMap?.[type] || [];
+
+  .dropdown(class=`${ cls ? `dropdown--${cls}` : '' }${ modify ? ` ${modify}` : '' }`)
+    if type !== 'expand'
+      .dropdown__wrap
+        if title !== ''
+          p.dropdown__title= title
+        if desc !== ''
+          p.dropdown__desc= desc
+    button.dropdown__btn(type="button" class=`${cls}-dropdown${style ? style : ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}`)
+      span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}`)= content
+    if list.length !== 0 && type !== 'expand' && status
+      ul.dopdown__list.list-dropdown
+        each val, key in list
+          li.list-dropdown__item
+            p.list-dropdown__text= val
+            .list-dropdown__control
+              button.list-dropdown__btn.list-dropdown__btn--dec
+              span.list-dropdown__count 2
+              button.list-dropdown__btn.list-dropdown__btn--inc
+        if type === 'guest'
+          li.list-dropdown__item.accept-control
+            button.accept-control__btn.accept-control__btn--clear Очистить
+            button.accept-control__btn.accept-control__btn--accept Применить
+    if type === 'expand' && status
+      ul.dopdown__list.list-dropdown(class=`${type === 'expand' ? 'list-dropdown--expand' : ''}`)
+        each val, key in list
+          li.list-dropdown__item(class=`${type === 'expand' ? 'list-dropdown__item--expand' : ''}`)
+            +checkbox({ content: val, cls:`expand-${key}`, status: cls === 'expand' && key > 0 && key < 4 })

@@ -1,0 +1,11 @@
+mixin like-button(option)
+  - const { title = '', content = '', status = false, cls = '' } = option
+
+  .like-button(class=`${cls ? `like-button--${cls}` : ''}`)
+    if title !== ''
+      p.like-button__title= title
+    .like-button__wrap
+      label.like-button__label(class='switch')
+        input.like-button__field(type='checkbox', checked = status)
+        span.like-button__control.symbol
+        span.like-button__text= content

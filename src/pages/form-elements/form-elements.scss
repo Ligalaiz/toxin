@@ -1,0 +1,119 @@
+@use '../../assets/styles/internals/index';
+
+.content {
+  &__container {
+    max-width: 118.8rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    column-gap: 9.5rem;
+    padding-bottom: 11.7rem;
+  }
+
+  &__item {
+    max-width: 32rem;
+    width: 100%;
+
+    &--comment {
+      grid-column: 2 / 4;
+      max-width: 71.1rem;
+    }
+
+    &--bedroom {
+      max-width: 26.6rem;
+      margin-bottom: 2.1rem;
+    }
+
+    &--expand {
+      max-width: 26.6rem;
+      margin-bottom: 6rem;
+    }
+
+    &--rich {
+      max-width: 26rem;
+      padding-top: 1.6rem;
+    }
+
+    &--comment {
+      max-width: unset;
+      padding: 1.9rem 0 0 3rem;
+    }
+  }
+}
+
+.item-content {
+  &__date {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 1.7rem;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  &--middle {
+    padding-left: 2.9rem;
+  }
+
+  &__checkbox-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 24rem;
+    margin-bottom: 3.4rem;
+  }
+
+  &__toggle-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin-top: 4rem;
+    margin-bottom: 4.6rem;
+  }
+
+  &--right {
+    padding-left: 0.4rem;
+  }
+
+  &__btn-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &--left {
+    margin-bottom: 8rem;
+  }
+}
+
+.like-btn {
+  margin-top: 4rem;
+
+  &__wrap {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
+
+.bar-btn {
+  &__wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+
+    &--default {
+      display: block;
+    }
+  }
+}

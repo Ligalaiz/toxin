@@ -1,0 +1,22 @@
+mixin button(option)
+  -
+    const { content = '', title = '', status = '', type = 'default', cls = '', modify = '' } = option
+
+    const typeClass = {
+      thin: ' button-thin',
+      text: ' button-text',
+      pay: ' button-pay',
+      default: '',
+    }
+
+    const statusClass = {
+      thin: ' button-thin--disabled',
+      text: ' button-text--disabled',
+      default: ' button__target--disabled',
+    }
+
+  .button-wrap(class=`${ cls ? `button--${cls}` : '' }${ modify ? ` ${modify}` : '' }`)
+    .button
+      if title !== ''
+        p.button__title= title
+      button.button__target(class=`${status ? statusClass[type] : '' }${type ? typeClass[type] : '' }`)= content

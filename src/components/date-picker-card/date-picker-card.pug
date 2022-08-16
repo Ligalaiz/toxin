@@ -1,0 +1,25 @@
+mixin date-picker-card
+  -
+    const week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+    const monthDays = Array.from({length: 31}, (_, i) => `${i + 1}`);
+    const days = ['29', '30', '31', ...monthDays, '1']
+    const picked = ['8']
+    const range = ['19', '23']
+    const setRange = (val) => range.indexOf(val) !== -1
+    const setPicked = (val) => picked.indexOf(val) !== -1
+
+  .date-picker-card.date-picker
+    .date-picker__head
+      button.date-picker__prev
+      p.date-picker__current Август 2019
+      button.date-picker__next
+    .date-picker__main
+      ul.date-picker__week.week-picker
+        each val, key in week
+          li.week-picker__item= val
+      ul.date-picker__month.month-picker
+        each val, key in days
+          li.month-picker__item(class=`${setRange(val) ? ' month-picker__item--range' : ''}${setPicked(val) ? ' month-picker__item--picked' : ''}`)= val
+    .date-picker__control
+      button.date-picker__btn.date-pickerl__btn--clear Очистить
+      button.date-picker__btn.date-picker__btn--accept Применить
