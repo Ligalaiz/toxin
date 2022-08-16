@@ -1,0 +1,65 @@
+@use '../../assets/styles/internals/index';
+
+.radio {
+    &__title {
+    margin-bottom: 1.6rem;
+
+    @include header-3;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2.2rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    color: $dark-shade-50;
+    font-size: 1.4rem;
+  }
+
+  &__field {
+    position: absolute;
+
+    width: 2rem;
+    height: 2rem;
+
+    z-index: -1;
+    opacity: 0;
+
+    & + label::before {
+      content: '';
+
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid $dark-shade-25;
+      border-radius: 50%;
+      margin-right: 0.5em;
+
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+
+    &:checked + label {
+      color: $dark-shade-100;
+
+      &::before {
+        border-color: $purple;
+
+        background-image: url('../../img/circle.svg');
+        background-size: 1.3rem;
+      }
+    }
+  }
+}

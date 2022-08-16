@@ -1,0 +1,53 @@
+@use '../../assets/styles/internals/index';
+
+.rating {
+  margin-top: 4rem;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  &__title {
+    margin-bottom: 1.6rem;
+
+    @include header-3;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+
+  &__field {
+    display: none;
+
+    & + label {
+      display: inline-block;
+      width: 2rem;
+
+      overflow: hidden;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+
+        background-image: url('../../img/star-border.svg');
+        background-repeat: no-repeat;
+      }
+    }
+
+    &:checked ~ label:before {
+      background-image: url('../../img/star.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}

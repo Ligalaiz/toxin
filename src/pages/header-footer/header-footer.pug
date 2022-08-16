@@ -1,0 +1,13 @@
+extends ../../layouts/ui-kit
+include ../../components/header/header
+include ../../components/footer/footer
+
+block title
+  | header footer
+
+block content
+  main.main.main--header-footer
+    +header
+    +header({ status: 'login' })
+    +footer()
+    +footer({ type: 'tablet' })

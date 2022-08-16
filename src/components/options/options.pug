@@ -1,0 +1,7 @@
+mixin options(option = {})
+  -
+    const { title = '', content = '', type = '' } = option;
+
+  .options(class=`options--${type}`)
+    .options__title= title
+    .options__content= content

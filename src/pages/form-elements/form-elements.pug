@@ -1,0 +1,85 @@
+extends ../../layouts/ui-kit
+include ../../components/input/input
+include ../../components/dropdown/dropdown
+include ../../components/checkbox/checkbox
+include ../../components/radio/radio
+include ../../components/toggle/toggle
+include ../../components/like-button/like-button
+include ../../components/rating/rating
+include ../../components/range/range
+include ../../components/button/button
+include ../../components/pagination/pagination
+include ../../components/rich-checkbox/rich-checkbox
+include ../../components/bullet-list/bullet-list
+include ../../components/options/options
+include ../../components/comment/comment
+
+block title
+  | form
+
+block content
+  .content
+    .content__container
+      .content__wrap
+        .content__item.item-content.item-content--left
+          +input({ type: 'email', placeholder: 'Email', cls: 'default', label: 'Text field', desc: 'Default' })
+          +input({ placeholder: 'Email', cls: 'active', label: 'Text field', desc: 'Hover/Focus', val: 'This is pretty awesome' })
+          +dropdown({ title: 'Dropdown', content: 'Сколько гостей', cls: 'guest' })
+          +input({ placeholder: 'дд.мм.гггг', cls: 'masked', label: 'Masked Text field' })
+          .item-content__date
+              +dropdown({ title: 'Date Dropdown', content: 'дд.мм.гггг', cls: 'date' })
+              +dropdown({ title: 'Date Dropdown', content: '19.08.2019', cls: 'date' })
+          +dropdown({ title: 'Filter Date Dropdown', content: '19 авг - 23 авг', cls: 'filter-date' })
+          +input({ type: 'email', placeholder: 'Eamil', cls: 'subscr', label: 'Subscription Text field' })
+        .content__item.item-content.item-content--middle
+          .item-content__checkbox-bar
+            +checkbox({ title: 'Checkbox buttons', content: 'Можно курить', cls:'smoke' })
+            +checkbox({ content: 'Можно с питомцами', cls:'pet', status: true })
+            +checkbox({ content: 'Можно пригласить гостей (до 10 человек)', cls:'guests', status: true })
+          +radio({ title: 'Radio buttons', content: { men: 'Мужчина', women: 'Женчина' } })
+          .item-content__toggle-bar
+            +toggle({ title: 'Toggle', content: 'Получать спецпредложения', status: true })
+            +toggle({ content: 'Получать спецпредложения' })
+          .item-content__like-btn.like-btn
+            p.like-button__title Like Button
+            .like-btn__wrap
+              +like-button({ content: '2' })
+              +like-button({ content: '12', status: true })
+          .item-content__rating
+            +rating({ title: 'Rate button', name: 'example-1', checked: 3 })
+            +rating({ name: 'example-2' })
+        .content__item.item-content.item-content--right
+          +range({ title: 'Range slider' })
+          .item-content__btn-bar.bar-btn
+            .bar-btn__wrap
+              +button({ title: 'Buttons', content: 'Click me'})
+              +button({ content: 'Click me', status: 'disabled'})
+            .bar-btn__wrap
+              +button({ content: 'Click me', type: 'thin'})
+              +button({ content: 'Click me', type: 'thin', status: 'disabled'})
+            .bar-btn__wrap
+              +button({ content: 'Click me', type: 'text'})
+              +button({ content: 'Click me', type: 'text', status: 'disabled'})
+            .bar-btn__wrap.bar-btn__wrap--default
+              +button({ content: 'Перейти к оплате', type: 'pay'})
+          +pagination({ title: 'Pagination'})
+        .content__item.content__item--bedroom
+          +dropdown({ title: 'Dropdown', desc: 'Default', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom' })
+          +dropdown({ title: 'Dropdown', desc: 'Expanded', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom', type: 'bedroom', status: true })
+        .content__item
+          +dropdown({ title: 'Dropdown', content: 'Сколько гостей', cls: 'bedroom', type: 'guest', status: true })
+        .content__item
+          +dropdown({ title: 'Dropdown', content: '3 гостя', cls: 'bedroom', type: 'guest', status: true })
+        .content__item.content__item--expand
+          +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand' })
+          +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand', status: true })
+        .content__item.content__item--rich
+          +rich-checkbox({ title: 'Rich checkbox buttons', content: 'Широкий коридор', subcontent: 'Ширина коридора в номере не\u00A0менее 91 см.', cls: 'hall'})
+          +rich-checkbox({ content: 'Помощник для инвалидов', subcontent: 'На 1 этаже вас встретит специалист  и проводит до номера.', cls: 'helper'})
+        .content__item
+          +bullet-list({ title: 'Bullet list'})
+        .content__item.content__item--option
+          +options({ title: 'Комфорт', content: 'Шумопоглощающие стены', type: 'emotion'})
+          +options({ title: 'Удобство', content: 'Окно в каждой из спален', type: 'location'})
+        .content__item.content__item--comment
+          +comment({ title: 'Мурад Сарафанов', day: 5, content: 12, feedback: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' })

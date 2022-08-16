@@ -38,9 +38,9 @@ module.exports = merge(commonConfig, {
     open: '/',
     port: 3000,
     historyApiFallback: true,
-    devMiddleware: {
-      writeToDisk: true,
-    },
+    // devMiddleware: {
+    //   writeToDisk: true,
+    // },
   },
 
   // plugins: [new BundleAnalyzerPlugin()],

@@ -1,0 +1,44 @@
+@use '../../assets/styles/internals/index';
+
+.sign-in-card {
+  padding: 4.3rem 3rem 3rem;
+  max-width: 38rem;
+  min-width: 320px;
+  width: 100%;
+  border-radius: 0.4rem;
+
+  box-shadow: 0 0 2.5rem $black-20;
+  background-color: $white;
+
+  &__title {
+    margin-bottom: 1.6rem;
+
+    @include header-1;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__pay-btn {
+    margin-bottom: 3rem;
+  }
+
+  &__text {
+    @include fontz(1.4rem, 1.28, $black);
+  }
+
+  &__sign-in-btn .button-thin {
+    padding: 1.5rem 1.6rem;
+  }
+}
+
+.field--sign-in-card-mail {
+  margin-bottom: 0.7rem;
+}
+
+.field--sign-in-card-pass {
+  margin-bottom: 1.9rem;
+}
