@@ -1,11 +1,12 @@
-mixin pagination(option)
+mixin pagination(option = {})
   -
-    const { title } = option;
+    const { title = '', modify = '' } = option;
     const pagination = [1, 2, 3, '...', 15]
     const active = 1
 
-  .pagination
-    .pagination__title= title
+  .pagination(class=`${modify ? ` ${modify}__pagination` : ''}`)
+    if title !== ''
+      .pagination__title= title
     .pagination__wrap
       ul.pagination__list
         each val, key in pagination
