@@ -2,8 +2,10 @@ include ../dropdown/dropdown
 include ../button/button
 
 mixin search-card(option = {})
+  -
+    const { modify = '' } = option
 
-  .search-card
+  .search-card(class=`${modify ? `${modify}__search-card` : ''}`)
     p.search-card__title Найдём номера под ваши пожелания
     .search-card__wrap
       +dropdown({ title: 'Прибытие', content: 'дд.мм.гггг', cls: 'date' })

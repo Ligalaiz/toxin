@@ -1,0 +1,53 @@
+@use '../../assets/styles/internals/index';
+
+.landing {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.landing-main {
+  flex: 1 1 auto;
+
+  &__search-card {
+    align-self: flex-start;
+    margin-left: 1.5rem;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    max-width: 144rem;
+    width: 100%;
+    min-height: 83rem;
+    padding: 7rem 1.5rem 1.8rem;
+    margin: 0 auto;
+
+    background-image: url('../../img/bg-landing.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 -7rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    max-width: 119rem;
+    width: 100%;
+    margin: 0 auto;
+
+    @media(max-width: 730px) {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    max-width: 29.7rem;
+    align-self: flex-end;
+    padding-right: 1rem;
+
+    @include text;
+    text-align: right;
+  }
+}
