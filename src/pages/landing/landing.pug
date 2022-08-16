@@ -1,0 +1,18 @@
+extends ../../layouts/page
+include ../../components/header/header
+include ../../components/search-card/search-card
+include ../../components/footer/footer
+
+block title
+  | landing
+
+block content
+  .landign__wrap
+    +header
+    .main-landing.landing-main
+      .landing-main__wrap
+        .landing-main__container
+          +search-card({ modify: 'landing-main'})
+          p.landing-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+    +footer
+
