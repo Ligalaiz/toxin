@@ -1,0 +1,60 @@
+@use '../../assets/styles/internals/index';
+
+.search-main {
+  display: flex;
+  justify-content: space-between;
+
+  &__wrap {
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 0.1rem solid $dark-shade-10;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 6rem;
+    max-width: 119rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem 3.2rem;
+  }
+
+  &__config {
+    max-width: 26.6rem;
+    width: 100%;
+  }
+}
+
+.rooms-search {
+  padding-bottom: 6.9rem;
+
+  &__title {
+    margin-bottom: 2.05rem;
+
+    @include fontz(2.4rem, 1.2, $dark-shade-100);
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.05rem 1.2rem;
+    margin-bottom: 4.05rem;
+
+    & .room-card {
+      margin-bottom: 0;
+    }
+  }
+
+  &__pagination {
+    margin: 0 auto;
+  }
+}
+
+.config-search {
+  &__text {
+    @include fontz(1.2rem, 1.16, $dark-shade-50);
+  }
+}
