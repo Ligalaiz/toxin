@@ -2,15 +2,15 @@ include ../like-button/like-button
 
 mixin comment(option = {})
   -
-    const { title = '', content = '', day = '', feedback = '' } = option;
+    const { title = '', content = '', day = '', feedback = '', status = false, num = '1', modify = '' } = option;
 
-  .comment
+  .comment(class=`${modify ? ` comment--${modify}` : ''}`)
     .comment__head
       .comment__img.img-comment
-        img.img-comment__img(src="./assets/img/image.png", alt="")
+        img.img-comment__img(src=`./assets/img/feedback-${num}.png`, alt='person')
       .comment__desc
         .comment__title= title
-        .comment__day= `${day} дней назад`
+        .comment__day= `${day} назад`
     .comment__main
-      +like-button({ content, status: true, cls: 'comment' })
+      +like-button({ content, status, cls: 'comment' })
       .comment__feedback= feedback
