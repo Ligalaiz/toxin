@@ -97,14 +97,14 @@ block content
             .search-main__config.config-search
               +dropdown({ title: 'Даты пребывания в отеле', content: '19 авг - 23 авг', cls: 'search-arrived' })
               +dropdown({ title: 'Гости', content: '3 гостя, 1 младенец', cls: 'search-guest' })
-              +range({ title: 'Range slider' })
+              +range({ title: 'Диапазон цены', modify: 'config-search' })
               p.config-search__text Стоимость за сутки пребывания в номере
-              +checkbox({ title: 'Правила дома', content: 'Можно курить', cls:'search-smoke' })
-              +checkbox({ content: 'Можно с питомцами', cls:'search-pet', status: true })
-              +checkbox({ content: 'Можно пригласить гостей (до 10 человек)', cls:'search-guests', status: true })
-              +rich-checkbox({ title: 'Rich checkbox buttons', content: 'Широкий коридор', subcontent: 'Ширина коридора в номере не\u00A0менее 91 см.', cls: 'search-hall'})
-              +rich-checkbox({ content: 'Помощник для инвалидов', subcontent: 'На 1 этаже вас встретит специалист  и проводит до номера.', cls: 'search-helper'})
-              +dropdown({ title: 'удобства номера', content: '2 спальни, 2 кровати', cls: 'bedroom' })
+              +checkbox({ title: 'Правила дома', content: 'Можно курить', cls:'search-smoke', modify: 'search-smoke' })
+              +checkbox({ content: 'Можно с питомцами', cls:'search-pet', status: true, modify: 'search-pet' })
+              +checkbox({ content: 'Можно пригласить гостей (до 10 человек)', cls:'search-guests', status: true, modify: 'search-guests' })
+              +rich-checkbox({ title: 'Доступность', content: 'Широкий коридор', subcontent: 'Ширина коридора в номере не\u00A0менее 91 см.', cls: 'search-hall', modify: 'search-hall' })
+              +rich-checkbox({ content: 'Помощник для инвалидов', subcontent: 'На 1 этаже вас встретит специалист  и проводит до номера.', cls: 'search-helper', modify: 'search-helper' })
+              +dropdown({ title: 'удобства номера', content: '2 спальни, 2 кровати', cls: 'bedroom', modify: 'search-bedroom' })
               +dropdown({ content: 'Дополнительные удобства', cls: 'search-expand', type: 'expand' })
             .search-main__rooms.rooms-search
               .rooms-search__title Номера, которые мы для вас подобрали
