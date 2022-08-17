@@ -12,7 +12,7 @@ mixin dropdown(option = {})
     };
     const list = listMap?.[type] || [];
 
-  .dropdown(class=`${ cls ? `dropdown--${cls}` : '' }${ modify ? ` ${modify}` : '' }`)
+  .dropdown(class=`${ cls ? `dropdown--${cls}` : '' }${ modify ? ` dropdown--${modify}` : '' }`)
     if type !== 'expand'
       .dropdown__wrap
         if title !== ''
