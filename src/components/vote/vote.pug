@@ -1,0 +1,16 @@
+mixin vote(option = {})
+  -
+    const { title = '', cls = '' } = option;
+    const agendaList = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+
+  .vote(class=`${cls ? `vote--${cls}` : ''}`)
+    .vote__title= title
+    .vote__wrap
+      .vote__diagram
+        .vote__voice
+          span.vote__voice--thick 260
+          span.vote__voice--thin голосов
+      .vote__agenda
+        ul.vote__list
+          each val, key in agendaList
+            li.vote__item(class=` vote__item--${key + 1}`)= val
