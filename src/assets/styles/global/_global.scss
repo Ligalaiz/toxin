@@ -201,9 +201,12 @@ input:-webkit-autofill:active {
 @import '../../../components/sign-in-card/sign-in-card';
 @import '../../../components/room-card/room-card';
 @import '../../../components/date-picker-card/date-picker-card';
-@import '../../../pages/header-footer/header-footer';
 @import '../../../components/header/header';
 @import '../../../components/footer/footer';
+@import '../../../components/vote/vote';
+@import '../../../components/info/info';
+@import '../../../pages/header-footer/header-footer';
 @import '../../../layouts/page';
 @import '../../../pages/landing/landing';
 @import '../../../pages/search/search';
+@import '../../../pages/room-detail/room-detail';

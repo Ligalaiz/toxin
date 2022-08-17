@@ -1,7 +1,7 @@
 mixin options(option = {})
   -
-    const { title = '', content = '', type = '' } = option;
+    const { title = '', content = '', type = '', modify = '' } = option;
 
-  .options(class=`options--${type}`)
+  .options(class=`options--${type}${modify ? ` options--${modify}` : ''}`)
     .options__title= title
     .options__content= content

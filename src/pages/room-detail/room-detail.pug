@@ -1,0 +1,48 @@
+extends ../../layouts/page
+include ../../components/vote/vote
+include ../../components/info/info
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/comment/comment
+include ../../components/options/options
+include ../../components/book-card/book-card
+include ../../components/bullet-list/bullet-list
+
+block title
+  | room detail
+
+block content
+  +header
+  main
+    .room-detail
+      .room-detail__wrap
+        .room-detail__gallery.gallery-room
+          .gallery-room__big
+            img(src=`../../assets/img/room-detail-888-1.jpg`, alt='room detail')
+          .gallery-room__wrap
+            .gallery-room__item.gallery-room__item--top
+              img(src=`../../assets/img/room-detail-888-2.jpg`, alt='room detail')
+            .gallery-room__item.gallery-room__item--bottom
+              img(src=`../../assets/img/room-detail-888-3.jpg`, alt='room detail')
+        .room-detail__container
+          .room-detail__content.content-room
+            .content-room__wrap.content-room__wrap--top
+              .content-room__option
+                p.content-room__title.content-room__title--top Сведения о номера
+                +options({ title: 'Комфорт', content: 'Шумопоглощающие стены', type: 'comfort' })
+                +options({ title: 'Удобство', content: 'Окно в каждой из спален', type: 'cose '})
+                +options({ title: 'Уют', content: 'Номер оснащен камином', type: 'consiness' })
+              .content-room__reveal
+                +vote({ title: 'Впечатления от номера'})
+            .content-room__wrap.content-room__wrap--comment
+              .content-room__feedback
+                p.content-room__title Отзывы посетителей номера
+                p.content-room__count 2 отзыва
+              +comment({ title: 'Мурад Сарафанов', day: '5 дней', content: 12, feedback: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', status: true, modify: 'content-room' })
+              +comment({ title: 'Патрисия Стёклышкова', day: 'Неделю', content: 2, feedback: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', num: '2' })
+            .content-room__wrap.content-room__wrap--bottom
+              +bullet-list({ title: 'Правила'})
+              +info({ title: 'Отмена', content: 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.', modify: 'room-detail'})
+          .room-detail__reserve
+            +book-card
+  +footer
