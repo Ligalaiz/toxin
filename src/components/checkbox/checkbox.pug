@@ -1,7 +1,7 @@
 mixin checkbox(option = {})
-  - const { title = '', content = '', subcontent = '', cls = '', status = false, type = '' } = option
+  - const { title = '', content = '', subcontent = '', cls = '', status = false, type = '', modify = '' } = option
 
-  .checkbox
+  .checkbox(class=`${modify ? ` checkbox--${modify}` : ''}`)
     if title !== ''
       p.checkbox__title= title
     input(type='checkbox' class=`checkbox__field ${cls}-checkbox` name=`${cls}` value='yes' id=`${cls}Checkbox` checked=status)

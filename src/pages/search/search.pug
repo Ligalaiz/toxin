@@ -1,0 +1,115 @@
+extends ../../layouts/page
+include ../../components/range/range
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/dropdown/dropdown
+include ../../components/checkbox/checkbox
+include ../../components/room-card/room-card
+include ../../components/pagination/pagination
+include ../../components/rich-checkbox/rich-checkbox
+
+block title
+  | landing
+
+block content
+  -
+    const roomList = [
+      {
+        id: '888',
+        price: '9990',
+        feedback: '145',
+        rating: '5',
+      },
+      {
+        id: '840',
+        price: '9900',
+        feedback: '65',
+        rating: '4',
+      },
+      {
+        id: '980',
+        price: '8500',
+        feedback: '35',
+        rating: '3',
+      },
+      {
+        id: '856',
+        price: '7300',
+        feedback: '19',
+        rating: '5',
+      },
+      {
+        id: '740',
+        price: '6000',
+        feedback: '44',
+        rating: '4',
+      },
+      {
+        id: '982',
+        price: '5800',
+        feedback: '56',
+        rating: '3',
+      },
+      {
+        id: '678',
+        price: '5500',
+        feedback: '45',
+        rating: '5',
+      },
+      {
+        id: '450',
+        price: '5300',
+        feedback: '39',
+        rating: '4',
+      },
+      {
+        id: '350',
+        price: '5000',
+        feedback: '77',
+        rating: '3',
+      },
+      {
+        id: '666',
+        price: '5000',
+        feedback: '25',
+        rating: '5',
+      },
+      {
+        id: '444',
+        price: '5000',
+        feedback: '15',
+        rating: '3',
+      },
+      {
+        id: '352',
+        price: '5000',
+        feedback: '55',
+        rating: '3',
+      },
+    ]
+
+  .search
+    +header
+    .search
+      .main-search.search-main
+        .search-main__wrap
+          .search-main__container
+            .search-main__config.config-search
+              +dropdown({ title: 'Даты пребывания в отеле', content: '19 авг - 23 авг', cls: 'search-arrived' })
+              +dropdown({ title: 'Гости', content: '3 гостя, 1 младенец', cls: 'search-guest' })
+              +range({ title: 'Диапазон цены', modify: 'config-search' })
+              p.config-search__text Стоимость за сутки пребывания в номере
+              +checkbox({ title: 'Правила дома', content: 'Можно курить', cls:'search-smoke', modify: 'search-smoke' })
+              +checkbox({ content: 'Можно с питомцами', cls:'search-pet', status: true, modify: 'search-pet' })
+              +checkbox({ content: 'Можно пригласить гостей (до 10 человек)', cls:'search-guests', status: true, modify: 'search-guests' })
+              +rich-checkbox({ title: 'Доступность', content: 'Широкий коридор', subcontent: 'Ширина коридора в номере не\u00A0менее 91 см.', cls: 'search-hall', modify: 'search-hall' })
+              +rich-checkbox({ content: 'Помощник для инвалидов', subcontent: 'На 1 этаже вас встретит специалист  и проводит до номера.', cls: 'search-helper', modify: 'search-helper' })
+              +dropdown({ title: 'удобства номера', content: '2 спальни, 2 кровати', cls: 'bedroom', modify: 'search-bedroom' })
+              +dropdown({ content: 'Дополнительные удобства', cls: 'search-expand', type: 'expand' })
+            .search-main__rooms.rooms-search
+              .rooms-search__title Номера, которые мы для вас подобрали
+              ul.rooms-search__list
+                each val, key in roomList
+                  +room-card({ numb: val.id, count: val.feedback, price: val.price, rate: val.rating - 1 })
+              +pagination({ modify: 'rooms-search'})
+    +footer
