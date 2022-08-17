@@ -1,0 +1,133 @@
+@use '../../assets/styles/internals/index';
+
+.search-main {
+  display: flex;
+  justify-content: space-between;
+
+  &__wrap {
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 0.1rem solid $dark-shade-10;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 6rem;
+    max-width: 119rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3.2rem 1.5rem 0;
+
+    @media (max-width: 681px) {
+      column-gap: 2rem;
+    }
+
+    @media (max-width: 611px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__config {
+    min-width: 26.6rem;
+    max-width: 26.6rem;
+  }
+}
+
+.rooms-search {
+  padding-bottom: 6.9rem;
+
+  &__title {
+    margin-bottom: 2.05rem;
+
+    @include fontz(2.4rem, 1.2, $dark-shade-100);
+    font-weight: 700;
+
+    @media (max-width: 1203px) {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 1.2rem;
+    margin-bottom: 4.05rem;
+
+    & .room-card {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1203px) {
+      justify-content: center;
+    }
+  }
+
+  &__pagination {
+    margin: 0 auto;
+
+    & .pagination {
+      &__wrap {
+        margin-right: 1.7rem;
+      }
+
+      &__text {
+        margin-right: 1.2rem;
+      }
+    }
+  }
+}
+
+.config-search {
+  &__text {
+    margin-bottom: 3rem;
+
+    @include fontz(1.2rem, 1.16, $dark-shade-50);
+  }
+
+  &__range {
+    max-width: unset;
+    margin-bottom: 0.4rem;
+
+    & .range__head {
+      margin-bottom: 0.9rem;
+    }
+  }
+}
+
+.dropdown {
+  &--search-arrived {
+    margin-bottom: 2rem;
+  }
+
+  &--search-guest {
+    margin-bottom: 3.2rem;
+  }
+
+  &--search-bedroom {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.checkbox {
+  &--search-smoke {
+    margin-bottom: 0.4rem;
+  }
+
+  &--search-pet {
+    margin-bottom: 0.5rem;
+  }
+
+  &--search-guests {
+    max-width: 24.6rem;
+    margin-bottom: 2.3rem;
+  }
+}
+
+.rich-checkbox {
+  &--search-helper {
+    margin-bottom: 3rem;
+  }
+}

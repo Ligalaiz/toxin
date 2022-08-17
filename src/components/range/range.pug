@@ -1,8 +1,8 @@
-mixin range(option)
+mixin range(option = {})
   -
-    const { title = '' } = option;
+    const { title = '', modify = '' } = option;
 
-  .range
+  .range(class=`${modify ? ` ${modify}__range` : ''}`)
     .range__head
       .range__title= title
       .range__count

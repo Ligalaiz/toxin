@@ -2,7 +2,7 @@ include ../checkbox/checkbox
 
 mixin rich-checkbox(option = {})
   -
-    const { title = '', content = '', subcontent = '', cls = '' } = option
+    const { title = '', content = '', subcontent = '', cls = '', modify = '' } = option
 
-  .rich-checkbox
+  .rich-checkbox(class=`${modify ? ` rich-checkbox--${modify}` : ''}`)
     +checkbox({ title, content, subcontent, cls, type: 'rich' })
