@@ -1,8 +1,10 @@
 @use '../../assets/styles/internals/index';
 
 .pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 4rem;
-  max-width: 24.1rem;
 
   &__title {
     margin-bottom: 1.6rem;
