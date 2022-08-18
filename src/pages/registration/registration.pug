@@ -1,0 +1,17 @@
+extends ../../layouts/page
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/register-card/register-card
+
+block title
+  | registration
+
+block content
+  .registration__wrap
+    +header
+    main.registration__main
+      .registration__content.content-registration
+        .content-registration__wrap
+          .content-registration__container
+            +register-card({ content: 'Зарегистрироваться', modify: 'content-registration' })
+  +footer

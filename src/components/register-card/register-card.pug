@@ -3,8 +3,11 @@ include ../../components/input/input
 include ../../components/radio/radio
 include ../button/button
 
-mixin register-card
-  .register-card
+mixin register-card(option = {})
+  -
+    const { content = 'Перейти к оплате', modify = '' } = option
+
+  .register-card(class=`${modify ? ` register-card--${modify}` : ''}`)
     p.register-card__title Регистрация аккаунта
     +input({ placeholder: 'Имя', cls: 'register-card-name' })
     +input({ placeholder: 'Фамилия', cls: 'register-card-surname' })
@@ -13,7 +16,7 @@ mixin register-card
     +input({ placeholder: 'Email', cls: 'register-card-mail', label: 'Данные для входа в сервис' })
     +input({  placeholder: 'Пароль', cls: 'register-card-pass' })
     +toggle({ content: 'Получать спецпредложения', modify: 'register-card__offer' })
-    +button({ content: 'Перейти к оплате', type: 'pay', cls: 'search-card', modify: 'register-card__pay-btn'})
+    +button({ content, type: 'pay', cls: 'search-card', modify: 'register-card__pay-btn'})
     .register-card__wrap
       p.register-card__text Уже есть аккаунт на Toxin
       +button({ content: 'Войти', type: 'thin', cls: 'search-card', modify: 'register-card__sign-in-btn'})
