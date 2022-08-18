@@ -1,0 +1,35 @@
+@use '../../assets/styles/internals/index';
+
+.sign-in {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main {
+    flex: 1 1 auto;
+  }
+}
+
+.in-sign {
+  &__wrap {
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+
+    background-image: url('../../img/bg-sign-in.jpg');
+    background-position: 0 -7rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 119rem;
+    min-height: 70.2rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+}
