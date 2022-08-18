@@ -15,20 +15,24 @@
     top: 41%;
     left: 0.4rem;
 
-    width: 4rem;
-    height: 4rem;
+    width: 4.8rem;
+    height: 4.8rem;
 
     background-repeat: no-repeat;
     background-position: center;
     transform: translateY(-50%);
   }
 
-  &--emotion:before {
-    background-image: url('../../img/emotion.svg');
+  &--comfort:before {
+    background-image: url('../../img/comfort.svg');
   }
 
-  &--location:before {
-    background-image: url('../../img/location.svg');
+  &--cose:before {
+    background-image: url('../../img/cose.svg');
+  }
+
+  &--consiness:before {
+    background-image: url('../../img/consiness.svg');
   }
 
   &__content,

@@ -1,0 +1,7 @@
+mixin info(option)
+  -
+    const { title = '', content = '', modify = '' } = option
+
+  .info(class=`${modify ? ` info--${modify}` : ''}`)
+    p.info__title= title
+    p.info__content= content
