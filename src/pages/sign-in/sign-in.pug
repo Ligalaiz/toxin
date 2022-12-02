@@ -1,0 +1,17 @@
+extends ../../layouts/page
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/sign-in-card/sign-in-card
+
+block title
+  | sign in
+
+block content
+  .sign-in__wrap
+    +header
+    main.sign-in__main
+      .sign-in.in-sign
+        .in-sign__wrap
+          .in-sign__container
+            +sign-in-card
+    +footer
