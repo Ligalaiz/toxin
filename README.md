@@ -3,6 +3,7 @@
 
 ## Toxin - hotel booking website.
 Demo: [Link](https://ligalaiz-toxin.netlify.app/landing.html/)
+UI: [Link](https://ligalaiz-toxin.netlify.app/color-and-types.html/)
 
 ## Tech Stack
 
