@@ -19,4 +19,4 @@ mixin register-card(option = {})
     +button({ content, type: 'pay', cls: 'search-card', modify: 'register-card__pay-btn'})
     .register-card__wrap
       p.register-card__text Уже есть аккаунт на Toxin
-      +button({ content: 'Войти', type: 'thin', cls: 'search-card', modify: 'register-card__sign-in-btn'})
+      +button({ content: 'Войти', type: 'thin', cls: 'search-card', modify: 'register-card__sign-in-btn', link: 'https://ligalaiz-toxin.netlify.app/sign-in'})
