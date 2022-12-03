@@ -108,8 +108,8 @@ block content
               +dropdown({ content: 'Дополнительные удобства', cls: 'search-expand', type: 'expand' })
             .search-main__rooms.rooms-search
               .rooms-search__title Номера, которые мы для вас подобрали
-              ul.rooms-search__list
+              div.rooms-search__list
                 each val, key in roomList
-                  +room-card({ numb: val.id, count: val.feedback, price: val.price, rate: val.rating - 1 })
+                  +room-card({ numb: val.id, count: val.feedback, price: val.price, rate: val.rating - 1, link: 'https://ligalaiz-toxin.netlify.app/room-detail' })
               +pagination({ modify: 'rooms-search'})
     +footer
