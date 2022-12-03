@@ -17,8 +17,6 @@ UI-kit:
 
 JS, SCSS, PUG
 
-## Environment Variables
-
 ## Run Locally
 
 Clone the project
