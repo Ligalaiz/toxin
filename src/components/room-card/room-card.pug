@@ -2,12 +2,12 @@ include ../../components/rating/rating
 
 mixin room-card(option = {})
   -
-    const {numb = '0', type = '', count = '0', rate = 4, price = '' } = option
+    const {numb = '0', type = '', count = '0', rate = 4, price = '', link = '' } = option
 
   .room-card
     .room-card__img
       img(src=`../../assets/img/room-${numb}.jpg`, alt='room')
-    .room-card__desc
+    a.room-card__desc(href=link)
       .room-card__wrap
         p.room-card__title
           span.room-card__title--small №
