@@ -1,9 +1,17 @@
-[![Toxin CI](../../actions/workflows/develop.yml/badge.svg)](../../actions/workflows/develop.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/1e53bf3d974d0a8facc1/maintainability)](https://codeclimate.com/github/Ligalaiz/toxin/maintainability) [![Netlify Status](https://api.netlify.com/api/v1/badges/b6d71e8d-ea2b-40be-86e8-cbfc34a9bc62/deploy-status)](https://app.netlify.com/sites/ligalaiz-toxin/deploys)
-
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) [![Toxin CI](../../actions/workflows/develop.yml/badge.svg)](../../actions/workflows/develop.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/1e53bf3d974d0a8facc1/maintainability)](https://codeclimate.com/github/Ligalaiz/toxin/maintainability) [![Netlify Status](https://api.netlify.com/api/v1/badges/b6d71e8d-ea2b-40be-86e8-cbfc34a9bc62/deploy-status)](https://app.netlify.com/sites/ligalaiz-toxin/deploys)
 
 ## Toxin - hotel booking website.
-Demo: [Link](https://ligalaiz-toxin.netlify.app/landing.html/)
-UI: [Link](https://ligalaiz-toxin.netlify.app/color-and-types.html/)
+
+Demo:
+
+- [Link](https://ligalaiz-toxin.netlify.app/landing.html/)
+
+UI-kit:
+
+- [Color and types](https://ligalaiz-toxin.netlify.app/color-and-types.html/)
+- [Form elements](https://ligalaiz-toxin.netlify.app/form-elements)
+- [Cards](https://ligalaiz-toxin.netlify.app/cards)
+- [Header and footer](https://ligalaiz-toxin.netlify.app/header-footer)
 
 ## Tech Stack
 
