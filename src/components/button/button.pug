@@ -1,6 +1,6 @@
 mixin button(option)
   -
-    const { content = '', title = '', status = '', type = 'default', cls = '', modify = '' } = option
+    const { content = '', title = '', status = '', type = 'default', cls = '', modify = '', link = '' } = option
 
     const typeClass = {
       thin: ' button-thin',
@@ -19,4 +19,7 @@ mixin button(option)
     .button
       if title !== ''
         p.button__title= title
-      button.button__target(class=`${status ? statusClass[type] : '' }${type ? typeClass[type] : '' }`)= content
+      if link !== ''
+        a.button__target(class=`${status ? statusClass[type] : '' }${type ? typeClass[type] : '' }` href=link)= content
+      else
+        button.button__target(class=`${status ? statusClass[type] : '' }${type ? typeClass[type] : '' }`)= content
