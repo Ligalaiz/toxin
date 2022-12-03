@@ -1,17 +1,62 @@
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) [![Toxin CI](../../actions/workflows/develop.yml/badge.svg)](../../actions/workflows/develop.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/1e53bf3d974d0a8facc1/maintainability)](https://codeclimate.com/github/Ligalaiz/toxin/maintainability) [![Netlify Status](https://api.netlify.com/api/v1/badges/b6d71e8d-ea2b-40be-86e8-cbfc34a9bc62/deploy-status)](https://app.netlify.com/sites/ligalaiz-toxin/deploys)
 
-## Toxin - hotel booking website.
+# Toxin - hotel booking website.
 
-Demo:
+## Templates
 
-- [Link](https://ligalaiz-toxin.netlify.app/landing.html/)
+<table>
+  <tr>
+    <th><a href="https://ligalaiz-toxin.netlify.app/landing" target="_blank">Landing Page</a></th>
+    <th><a href="https://ligalaiz-toxin.netlify.app/search" target="_blank">Search Room</a></th>
+    <th><a href="https://ligalaiz-toxin.netlify.app/room-detail" target="_blank">Room Details</a></th>
+    <th><a href="https://ligalaiz-toxin.netlify.app/registration" target="_blank">Registration</a></th>
+    <th><a href="https://ligalaiz-toxin.netlify.app/sign-in" target="_blank">SignIn</a></th>
+  </tr>
 
-UI-kit:
+  <tr valign="top">
+    <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/landing.jpg?raw=true" target="_blank">
+        <img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/landing.jpg?raw=true?raw=true" width="250" alt="Главная страница">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/search.jpg?raw=true" target="_blank"><img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/search.jpg?raw=true" width="250" alt="Страница поиска"></a>
+    </td>
+	<td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/room-details.jpg?raw=true" target="_blank"><img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/room-details.jpg?raw=true" width="250" alt="Страница номера"></a>
+    </td>
+  <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/registration.jpg?raw=true" target="_blank"><img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/registration.jpg?raw=true" width="250" alt="Страница регистрации"></a>
+    </td>
+  <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/sign-in.jpg?raw=true" target="_blank"><img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/sign-in.jpg?raw=true" width="250" alt="Страница авторизации"></a>
+    </td>
+  </tr>
 
-- [Color and types](https://ligalaiz-toxin.netlify.app/color-and-types.html/)
-- [Form elements](https://ligalaiz-toxin.netlify.app/form-elements)
-- [Cards](https://ligalaiz-toxin.netlify.app/cards)
-- [Header and footer](https://ligalaiz-toxin.netlify.app/header-footer)
+  <tr>
+  <th><a href="https://ligalaiz-toxin.netlify.app/color-and-types" target="_blank">Colors & Types</a></th>
+  <th><a href="https://ligalaiz-toxin.netlify.app/form-elements" target="_blank">Form Elements</a></th>
+  <th><a href="https://ligalaiz-toxin.netlify.app/cards" target="_blank">Cards</a></th>
+  <th><a href="https://ligalaiz-toxin.netlify.app/header-footer" target="_blank">Headers & Footers</a></th>
+  </tr>
+
+  <tr valign="top">
+    <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/colors-type.jpg?raw=true" target="_blank">
+        <img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/colors-type.jpg?raw=true" width="250" alt="Colors and fonts">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/form-elements.jpg?raw=true" target="_blank"><img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/form-elements.jpg?raw=true" width="250" alt="Страница с элементами форм"></a>
+    </td>
+  <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/cards.jpg?raw=true" target="_blank"><img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/cards.jpg?raw=true" width="250" alt="Страница карточек"></a>
+    </td>
+  <td>
+      <a href="https://github.com/Ligalaiz/toxin/blob/develop/src/template/headers-footers.jpg?raw=true" target="_blank"><img src="https://github.com/Ligalaiz/toxin/blob/develop/src/template/headers-footers.jpg?raw=true" width="250" alt="Страница с шапками и футерами сайта"></a>
+    </td>
+  </tr>
+</table>
 
 ## Tech Stack
 
