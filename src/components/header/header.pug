@@ -29,7 +29,7 @@ mixin header(option = {})
 
   .header
     .header__container
-      .header__logo
+      a.header__logo(href='https://ligalaiz-toxin.netlify.app/landing')
         img(src=`../../assets/img/full-logo.svg`, alt='logo')
       .header__wrap
         ul.header__nav
@@ -37,8 +37,8 @@ mixin header(option = {})
             li.header__item(class=`${val.cls ? ` header__item--${val.cls}` : ''}${val.cls === 'about' ? ` active` : ''}`)= val.title
         if status === 'logout'
           .header__auth
-            +button({ content: 'войти', type: 'thin' })
-            +button({ content: 'Зарегистрироваться' })
+            +button({ content: 'войти', type: 'thin', link: 'https://ligalaiz-toxin.netlify.app/sign-in' })
+            +button({ content: 'Зарегистрироваться', link: 'https://ligalaiz-toxin.netlify.app/registration' })
         if status === 'login'
           .header__user
             p Юлий Цезарь
