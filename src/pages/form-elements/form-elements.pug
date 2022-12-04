@@ -64,15 +64,15 @@ block content
               +button({ content: 'Перейти к оплате', type: 'pay'})
           +pagination({ title: 'Pagination'})
         .content__item.content__item--bedroom
-          +dropdown({ title: 'Dropdown', desc: 'Default', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom' })
-          +dropdown({ title: 'Dropdown', desc: 'Expanded', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom', type: 'bedroom', status: true })
+          +dropdown({ title: 'Dropdown', desc: 'Default', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom', type: 'bedroom', id: '2' })
+          +dropdown({ title: 'Dropdown', desc: 'Expanded', content: '2 спальни, 2 кровати, 1 ванная комната', cls: 'bedroom', type: 'bedroom', id: '1' })
         .content__item
-          +dropdown({ title: 'Dropdown', content: 'Сколько гостей', cls: 'bedroom', type: 'guest', status: true })
+          +dropdown({ title: 'Dropdown', content: 'Сколько гостей', cls: 'bedroom', type: 'guest' })
         .content__item
           +dropdown({ title: 'Dropdown', content: '3 гостя', cls: 'bedroom', type: 'guest', status: true })
         .content__item.content__item--expand
           +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand' })
-          +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand', status: true })
+          +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand' })
         .content__item.content__item--rich
           +rich-checkbox({ title: 'Rich checkbox buttons', content: 'Широкий коридор', subcontent: 'Ширина коридора в номере не\u00A0менее 91 см.', cls: 'hall'})
           +rich-checkbox({ content: 'Помощник для инвалидов', subcontent: 'На 1 этаже вас встретит специалист  и проводит до номера.', cls: 'helper'})
