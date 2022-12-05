@@ -20,22 +20,21 @@ mixin dropdown(option = {})
         if desc !== ''
           p.dropdown__desc= desc
     button.dropdown__btn(type='button' class=`${cls}-dropdown${style ? style : ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}` id=`dropdown-${id}`)
-      span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}`)= content
-    //- if list.length !== 0 && type !== 'expand' && status
+      span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}` id=`text-${id}`)
     if list.length !== 0 && type !== 'expand'
       ul.dropdown__list.list-dropdown(id=`droplist-${id}`)
         each val, key in list
           li.list-dropdown__item
             p.list-dropdown__text= val
             .list-dropdown__control
-              button.list-dropdown__btn.list-dropdown__btn--dec
-              span.list-dropdown__count 2
-              button.list-dropdown__btn.list-dropdown__btn--inc
+              button.list-dropdown__btn.list-dropdown__btn--dec(id=`btnDec-${type}-${id}-${key}`)
+              span.list-dropdown__count(id=`field-${type}-${id}-${key}`)
+              button.list-dropdown__btn.list-dropdown__btn--inc(id=`btnInc-${type}-${id}-${key}`)
         if type === 'guest'
           li.list-dropdown__item.accept-control
             button.accept-control__btn.accept-control__btn--clear Очистить
             button.accept-control__btn.accept-control__btn--accept Применить
-    if type === 'expand' && status
+    if type === 'expand'
       ul.dropdown__list.list-dropdown(class=`${type === 'expand' ? 'list-dropdown--expand' : ''}`)
         each val, key in list
           li.list-dropdown__item(class=`${type === 'expand' ? 'list-dropdown__item--expand' : ''}`)
