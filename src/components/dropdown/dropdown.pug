@@ -19,10 +19,10 @@ mixin dropdown(option = {})
           p.dropdown__title= title
         if desc !== ''
           p.dropdown__desc= desc
-    button.dropdown__btn(type='button' class=`${cls}-dropdown${style ? style : ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}` id=`dropdown-${id}`)
-      span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}` id=`text-${id}`)
+    button.dropdown__btn(type='button' class=`${cls}-dropdown${style ? style : ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}` id=`dropdown-${type}-${id}`)
+      span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}` id=`text-${type}-${id}`)= type === 'expand' ? content : ''
     if list.length !== 0 && type !== 'expand'
-      ul.dropdown__list.list-dropdown(id=`droplist-${id}`)
+      ul.dropdown__list.list-dropdown(id=`droplist-${type}-${id}`)
         each val, key in list
           li.list-dropdown__item
             p.list-dropdown__text= val
@@ -35,7 +35,7 @@ mixin dropdown(option = {})
             button.accept-control__btn.accept-control__btn--clear Очистить
             button.accept-control__btn.accept-control__btn--accept Применить
     if type === 'expand'
-      ul.dropdown__list.list-dropdown(class=`${type === 'expand' ? 'list-dropdown--expand' : ''}`)
+      ul.dropdown__list.list-dropdown(class=`${type === 'expand' ? 'list-dropdown--expand' : ''}` id=`droplist-${type}-${id}`)
         each val, key in list
           li.list-dropdown__item(class=`${type === 'expand' ? 'list-dropdown__item--expand' : ''}`)
-            +checkbox({ content: val, cls:`expand-${key}`, status: cls === 'expand' && key > 0 && key < 4 })
+            +checkbox({ content: val, cls:`expand-${key}`, id, status: cls === 'expand' && key > 0 && key < 4 })

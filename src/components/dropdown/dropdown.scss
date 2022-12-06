@@ -30,7 +30,7 @@
     display: flex;
     align-items: center;
     max-width: 32rem;
-    max-height: 4.6rem;
+    height: 4.6rem;
     width: 100%;
     border-radius: 0.4rem;
     border: 1px solid $dark-shade-25;
@@ -110,10 +110,6 @@
 }
 
 .list-dropdown {
-  content: '';
-  position: absolute;
-  top: 6.3rem;
-
   display: none;
   width: 100%;
   border: 0.1rem solid $dark-shade-25;
