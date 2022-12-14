@@ -1,5 +1,5 @@
-export { getDropdownCount } from './getDropdownCount';
-export { setDropdownCount } from './setDropdownCount';
+import { getDropdownCount } from './getDropdownCount';
+import { setDropdownCount } from './setDropdownCount';
 
 const calculateVal = (id, state) => {
   const [calcType, type, itemId, itemInd] = id.split('-');
@@ -20,4 +20,4 @@ const calculateVal = (id, state) => {
   return currentCount;
 };
 
-export { calculateVal}
+export { calculateVal };
