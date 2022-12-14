@@ -2,7 +2,7 @@ include ../checkbox/checkbox
 
 mixin dropdown(option = {})
   -
-    const { title='', content='', cls='', desc='', type='', status=false, modify = '' } = option
+    const { title='', content='', cls='', desc='', type='', status=false, modify = '', id='' } = option
     let style = ''
     if (content === 'дд.мм.гггг') style = ' dropdown__btn--choiced'
     const listMap  = {
@@ -19,23 +19,23 @@ mixin dropdown(option = {})
           p.dropdown__title= title
         if desc !== ''
           p.dropdown__desc= desc
-    button.dropdown__btn(type="button" class=`${cls}-dropdown${style ? style : ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}`)
-      span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}`)= content
-    if list.length !== 0 && type !== 'expand' && status
-      ul.dopdown__list.list-dropdown
+    button.dropdown__btn(type='button' class=`${cls}-dropdown${style ? style : ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}` id=`dropdown-${type}-${id}`)
+      span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}` id=`text-${type}-${id}`)= type === 'expand' ? content : ''
+    if list.length !== 0 && type !== 'expand'
+      ul.dropdown__list.list-dropdown(id=`droplist-${type}-${id}`)
         each val, key in list
           li.list-dropdown__item
             p.list-dropdown__text= val
             .list-dropdown__control
-              button.list-dropdown__btn.list-dropdown__btn--dec
-              span.list-dropdown__count 2
-              button.list-dropdown__btn.list-dropdown__btn--inc
+              button.list-dropdown__btn.list-dropdown__btn--dec(id=`btnDec-${type}-${id}-${key}`)
+              span.list-dropdown__count(id=`field-${type}-${id}-${key}`)
+              button.list-dropdown__btn.list-dropdown__btn--inc(id=`btnInc-${type}-${id}-${key}`)
         if type === 'guest'
           li.list-dropdown__item.accept-control
             button.accept-control__btn.accept-control__btn--clear Очистить
             button.accept-control__btn.accept-control__btn--accept Применить
-    if type === 'expand' && status
-      ul.dopdown__list.list-dropdown(class=`${type === 'expand' ? 'list-dropdown--expand' : ''}`)
+    if type === 'expand'
+      ul.dropdown__list.list-dropdown(class=`${type === 'expand' ? 'list-dropdown--expand' : ''}` id=`droplist-${type}-${id}`)
         each val, key in list
           li.list-dropdown__item(class=`${type === 'expand' ? 'list-dropdown__item--expand' : ''}`)
-            +checkbox({ content: val, cls:`expand-${key}`, status: cls === 'expand' && key > 0 && key < 4 })
+            +checkbox({ content: val, cls:`expand-${key}`, id, status: cls === 'expand' && key > 0 && key < 4 })
