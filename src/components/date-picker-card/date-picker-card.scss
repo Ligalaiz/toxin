@@ -1,10 +1,14 @@
 @use '../../assets/styles/internals/index';
 
+.field {
+  display: none;
+}
+
 .date-picker {
   max-width: 32rem;
   width: 100%;
   padding: 1rem 2rem;
-  margin-bottom: 4.2rem;
+  margin: 0 auto 4.2rem;
 
   box-shadow: 0 0 2.5rem $black-20;
   background-color: $white;
@@ -16,17 +20,6 @@
     margin-bottom: 2.2rem;
   }
 
-  &__current {
-    @include fontz(1.9rem, 1.21, $dark-shade-100);
-    font-weight: 700;
-  }
-
-  &__week {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   &__prev,
   &__next {
     position: relative;
@@ -36,6 +29,8 @@
     border-radius: 50%;
 
     background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
 
     &:before,
     &:after {
@@ -59,52 +54,74 @@
 
       transform: translateY(-50%);
     }
+
+    &:hover {
+      background-color: $dark-shade-10;
+    }
+
+    &:disabled {
+      &:after {
+        background-color: $grey-aea;
+      }
+
+      &:before {
+        border-color: $grey-aea;
+      }
+
+      &:hover {
+        background-color: unset;
+      }
+    }
   }
 
-  &__prev:before {
-    transform: translateY(-50%) rotate(130deg);
-    left: 18%;
+  &__prev {
+    &:before {
+      transform: translateY(-50%) rotate(130deg);
+      left: 32%;
+    }
+
+    &:after {
+      left: 32%;
+    }
   }
 
-  &__prev:after {
-    left: 18%;
+  &__next {
+    &:before {
+      transform: translateY(-50%) rotate(-45deg);
+      right: 32%;
+    }
+
+    &:after {
+      right: 32%;
+    }
   }
 
-  &__next:before {
-    transform: translateY(-50%) rotate(-45deg);
-    right: 18%;
-  }
-
-  &__next:after {
-    right: 18%;
-  }
-
-  &__main {
+  &__body {
     margin-bottom: 0.5rem;
   }
 
-  &__month {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__control {
+  &__date {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    min-height: 3.8rem;
-    padding-top: 0.9rem;
-  }
-
-  &__btn {
-    @include header-3;
-    color: $purple;
-
-    background-color: transparent;
+    min-width: 13rem;
+    gap: 1rem;
   }
 }
 
-.week-picker {
+.date-month,
+.date-year {
+  font-size: 1.9rem;
+  line-height: 1.21;
+  color: $dark-shade-100;
+  font-weight: 700;
+  appearance: none;
+}
+
+.line-week {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   &__item {
     display: flex;
     justify-content: center;
@@ -112,31 +129,104 @@
     width: 4rem;
     height: 4rem;
 
-    @include fontz(1.2rem, 1, $purple);
+    font-size: 1.2rem;
+    line-height: 1;
+    color: $purple;
     font-weight: 700;
   }
 }
 
-.month-picker {
+.block-days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
   &__item {
+    width: 4rem;
+    height: 4rem;
+
+    & span {
+      border-radius: 50%;
+    }
+
+    &--today span {
+      background: linear-gradient(180deg, $green 0%, $blue-0 100%);
+    }
+
+    &--from,
+    &--to {
+      background: linear-gradient(180deg, $grey-bc9, $grey-8ba);
+
+      & span {
+        background: linear-gradient(180deg, $purple 0%, $blue 100%);
+      }
+    }
+
+    &--from {
+      border-radius: 50% 0 0 50%;
+    }
+
+    &--to {
+      border-radius: 0 50% 50% 0;
+    }
+  }
+
+  &__text {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 4rem;
     height: 4rem;
+    border-radius: 50%;
 
-    @include fontz(1.2rem, 1, $dark-shade-50);
+    font-size: 1.4rem;
+    line-height: 1;
+    color: $grey-aea;
 
-    &--range {
-      border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
 
-      background: linear-gradient(180deg, $purple 0%, $blue 100%);
-    }
-
-    &--picked {
-      border-radius: 50%;
-
-      background: linear-gradient(180deg, $green 0%, $blue-0 100%);
+    &:hover {
+      background-color: $dark-shade-10;
     }
   }
+}
+
+.controls-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3.8rem;
+  padding-top: 0.9rem;
+
+  &__btn {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    color: $purple;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+[data-date='disabled'] {
+  & .block-days__text {
+    color: $dark-shade-40;
+
+    &:hover {
+      background-color: unset;
+      cursor: default;
+    }
+  }
+}
+
+.focus-date-picker,
+.range-date-picker {
+  background: linear-gradient(180deg, $grey-bc9, $grey-8ba);
+}
+
+.focus-date-picker {
+  border-radius: 0 50% 50% 0;
 }
