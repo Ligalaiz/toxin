@@ -1,15 +1,2 @@
-mixin range(option = {})
-  -
-    const { title = '', modify = '' } = option;
-
-  .range(class=`${modify ? ` ${modify}__range` : ''}`)
-    .range__head
-      .range__title= title
-      .range__count
-        span(id="range1") 5 000₽
-        span= ' - '
-        span(id="range2") 10 000₽
-    .range__wrap
-      .range__track
-      input.range__field.range__field--min(type="range" min="0" max="100" value="30" id="slider-1" oninput="slideOne()")
-      input.range__field.range__field--max(type="range" min="0" max="100" value="70" id="slider-2" oninput="slideTwo()")
+mixin range
+  .range-wrap#rangeWrap
