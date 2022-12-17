@@ -1,5 +1,6 @@
 import { writeText } from './writeText';
 import { renderValue } from './renderValue';
+import { disabledBtn } from './disabledBtn';
 
 const renderState = (state) => {
   Object.keys(state).forEach((type) => {
@@ -9,6 +10,7 @@ const renderState = (state) => {
       if (type === 'expand') return;
       const tempId = `-${type}-${dropdownId}`;
       renderValue({ fieldName: 'text', id: tempId, val: writeText(tempId, state) });
+      if (type === 'guest') disabledBtn(tempId, state);
 
       currentType[dropdownId].forEach((dropdownItem, dropdownInd) => {
         const val = dropdownItem.count;

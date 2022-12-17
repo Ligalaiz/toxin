@@ -1,6 +1,6 @@
 mixin input(attr)
   -
-    const {type = 'text', placeholder = '', cls = '', label = '', val = '', desc = '', modify = '' } = attr;
+    const {type = 'text', placeholder = '', cls = '', label = '', val = '', desc = '', modify = '', id = '' } = attr;
     const pattern = {
       email: '[^ @]*@[^ @]*',
       text: '',
@@ -13,6 +13,6 @@ mixin input(attr)
         p.field__label= label
       if desc !== ''
         p.field__desc= desc
-    if (modify === 'substr')
-      button.field__btn
-    input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`)
+    if (modify === 'subscr')
+      button.field__btn-subscr
+    input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`, id=`${id}`)

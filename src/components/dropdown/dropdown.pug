@@ -32,8 +32,8 @@ mixin dropdown(option = {})
               button.list-dropdown__btn.list-dropdown__btn--inc(id=`btnInc-${type}-${id}-${key}`)
         if type === 'guest'
           li.list-dropdown__item.accept-control
-            button.accept-control__btn.accept-control__btn--clear Очистить
-            button.accept-control__btn.accept-control__btn--accept Применить
+            button.accept-control__btn.accept-control__btn--clear(id=`btnClear-${type}-${id}`) Очистить
+            button.accept-control__btn.accept-control__btn--accept(id=`btnAccept-${type}-${id}`) Применить
     if type === 'expand'
       ul.dropdown__list.list-dropdown(class=`${type === 'expand' ? 'list-dropdown--expand' : ''}` id=`droplist-${type}-${id}`)
         each val, key in list

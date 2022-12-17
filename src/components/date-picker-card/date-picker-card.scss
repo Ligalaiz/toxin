@@ -1,8 +1,6 @@
 @use '../../assets/styles/internals/index';
 
-.field {
-  display: none;
-}
+
 
 .date-picker {
   max-width: 32rem;
@@ -12,6 +10,10 @@
 
   box-shadow: 0 0 2.5rem $black-20;
   background-color: $white;
+
+  &__field {
+    display: none;
+  }
 
   &__head {
     display: flex;

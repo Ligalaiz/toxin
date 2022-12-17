@@ -161,13 +161,15 @@ class Datepicker {
 }
 
 window.addEventListener('load', () => {
-  Datepicker.renderTemplate('pickerWrap');
-  const datepicker = new Datepicker();
-  datepicker.render();
+  if (document.getElementById('pickerWrap')) {
+    Datepicker.renderTemplate('pickerWrap');
+    const datepicker = new Datepicker();
+    datepicker.render();
 
-  document.addEventListener('click', ({ target }) => {
-    if (target.id === 'prevBtn') datepicker.changeMonth('dec');
-    if (target.id === 'nextBtn') datepicker.changeMonth();
-    if (target.closest('[data-date]')) datepicker.pickDate(target);
-  });
+    document.addEventListener('click', ({ target }) => {
+      if (target.id === 'prevBtn') datepicker.changeMonth('dec');
+      if (target.id === 'nextBtn') datepicker.changeMonth();
+      if (target.closest('[data-date]')) datepicker.pickDate(target);
+    });
+  }
 });

@@ -200,6 +200,12 @@
     color: $purple;
 
     background-color: transparent;
+
+    &:disabled {
+      color: $purple-50;
+
+      cursor: default;
+    }
   }
 }
 

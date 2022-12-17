@@ -3,7 +3,6 @@
 .pagination {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 4rem;
 
   &__title {
@@ -80,6 +79,5 @@
 
   &__text {
     @include text;
-    text-align: center;
   }
 }

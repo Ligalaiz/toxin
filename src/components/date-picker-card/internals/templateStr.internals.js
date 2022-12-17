@@ -1,6 +1,6 @@
 const templateStr = `
       <div class="date-picker">
-        <input class="field" type="text" name="date" />
+        <input class="date-picker__field" type="text" name="date" />
         <div class="date-picker__head">
           <button class="date-picker__prev" id="prevBtn"></button>
           <div class="date-picker__date">

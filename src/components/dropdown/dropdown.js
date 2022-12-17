@@ -1,9 +1,9 @@
 import { state } from '@src/internals/data/state';
-import { renderState, renderValue, calculateVal, writeText } from './utils';
+import { renderState, renderValue, calculateVal, writeText, disabledBtn, reRenderDropdown } from './utils';
 
 window.addEventListener('load', () => {
   renderState(state);
-  const activeDropdown = ['dropdown-bedroom-2', 'dropdown-expand-2', 'dropdown-guest-2'];
+  const activeDropdown = ['dropdown-bedroom-1', 'dropdown-expand-2', 'dropdown-guest-1', 'dropdown-guest-2'];
 
   activeDropdown.forEach((activeClass) => {
     document.getElementById(activeClass).classList.add('active');
@@ -20,8 +20,23 @@ document.addEventListener('click', ({ target }) => {
   if (target?.id.match('btnDec') || target?.id.match('btnInc')) {
     const currentVal = calculateVal(target.id, state);
     const currentText = writeText(target.id, state);
+    disabledBtn(target.id, state);
 
     renderValue({ fieldName: 'field', id: target.id, val: currentVal });
     renderValue({ fieldName: 'text', id: target.id, val: currentText });
+  }
+
+  const clearDropdown = (id, state) => {
+    const [_, type, itemId] = id.split('-');
+    const currentState = state[type][itemId];
+    currentState.forEach((item) => {
+      item.count = 0;
+    });
+  };
+
+  if (target?.id.match('btnClear')) {
+    clearDropdown(target.id, state);
+    disabledBtn(target.id, state);
+    reRenderDropdown(target.id, state);
   }
 });
