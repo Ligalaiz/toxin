@@ -35,8 +35,12 @@ document.addEventListener('click', ({ target }) => {
   };
 
   if (target?.id.match('btnClear')) {
-    clearDropdown(target.id, state);
-    disabledBtn(target.id, state);
-    reRenderDropdown(target.id, state);
+    const [_, type] = target.id.split('-');
+
+    if (type !== 'date') {
+      clearDropdown(target.id, state);
+      disabledBtn(target.id, state);
+      reRenderDropdown(target.id, state);
+    }
   }
 });

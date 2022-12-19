@@ -1,10 +1,11 @@
 include ../checkbox/checkbox
+include ../date-picker-card/date-picker-card
 
 mixin dropdown(option = {})
   -
-    const { title='', content='', cls='', desc='', type='', status=false, modify = '', id='' } = option
+    const { title='', content='', cls='', desc='', type='', status=false, modify = '', id='', pickerType = '' } = option
     let style = ''
-    if (content === 'дд.мм.гггг') style = ' dropdown__btn--choiced'
+    if (type === 'date') style = ' dropdown__btn--date'
     const listMap  = {
       guest: ['Взрослые', 'Дети', 'Младенцы'],
       bedroom: ['Спальни', 'Кровати', 'Ванные комнаты'],
@@ -39,3 +40,5 @@ mixin dropdown(option = {})
         each val, key in list
           li.list-dropdown__item(class=`${type === 'expand' ? 'list-dropdown__item--expand' : ''}`)
             +checkbox({ content: val, cls:`expand-${key}`, id, status: cls === 'expand' && key > 0 && key < 4 })
+    if type === 'date'
+      +date-picker-card({ id: `${type}-${id}`, pickerType })

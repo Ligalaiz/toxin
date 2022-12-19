@@ -1,7 +1,5 @@
 @use '../../assets/styles/internals/index';
 
-
-
 .date-picker {
   max-width: 32rem;
   width: 100%;
@@ -152,6 +150,8 @@
     }
 
     &--today span {
+      color: $white;
+
       background: linear-gradient(180deg, $green 0%, $blue-0 100%);
     }
 
@@ -160,6 +160,8 @@
       background: linear-gradient(180deg, $grey-bc9, $grey-8ba);
 
       & span {
+        color: $white;
+
         background: linear-gradient(180deg, $purple 0%, $blue 100%);
       }
     }
@@ -170,6 +172,17 @@
 
     &--to {
       border-radius: 0 50% 50% 0;
+    }
+
+    &.disabled {
+      & .block-days__text {
+        color: $dark-shade-40;
+
+        &:hover {
+          background-color: unset;
+          cursor: default;
+        }
+      }
     }
   }
 
@@ -210,15 +223,10 @@
 
     background-color: transparent;
     cursor: pointer;
-  }
-}
 
-[data-date='disabled'] {
-  & .block-days__text {
-    color: $dark-shade-40;
+    &:disabled {
+      color: $purple-50;
 
-    &:hover {
-      background-color: unset;
       cursor: default;
     }
   }

@@ -1,2 +1,5 @@
-mixin date-picker-card
-  .date-picker__wrap#pickerWrap
+mixin date-picker-card(option = {})
+  -
+    const { id = '', pickerType = '' } = option
+
+  .date-picker__wrap(id=`pickerWrap-${id}-${pickerType}`)

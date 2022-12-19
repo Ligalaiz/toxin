@@ -27,9 +27,9 @@ block content
           +dropdown({ title: 'Dropdown', cls: 'bedroom', type: 'guest', id: '3' })
           +input({ placeholder: 'дд.мм.гггг', cls: 'masked', label: 'Masked Text field', id: 'dateMask' })
           .item-content__date
-              +dropdown({ title: 'Date Dropdown', content: 'дд.мм.гггг', cls: 'date' })
-              +dropdown({ title: 'Date Dropdown', content: '19.08.2019', cls: 'date' })
-          +dropdown({ title: 'Filter Date Dropdown', content: '19 авг - 23 авг', cls: 'filter-date' })
+              +dropdown({ title: 'Date Dropdown', pickerType: 'double', cls: 'date',type: 'date', id: '1' })
+              +dropdown({ title: 'Date Dropdown', cls: 'date', type: 'date', pickerType: 'double', id: '2' })
+          +dropdown({ title: 'Filter Date Dropdown', type: 'date', pickerType: 'range', id: '3', cls: 'filter-date' })
           +input({ type: 'email', placeholder: 'Email', cls: 'subscr', label: 'Subscription Text field', modify: 'subscr' })
         .content__item.item-content.item-content--middle
           .item-content__checkbox-bar

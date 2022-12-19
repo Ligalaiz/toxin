@@ -42,9 +42,16 @@
 
     background-color: transparent;
 
-    &--choiced {
+    &--date {
       @include fontz(1.4rem, 1, $dark-shade-75);
       text-transform: uppercase;
+
+      &.active + .date-picker__wrap {
+        position: relative;
+
+        display: block;
+        z-index: 1000;
+      }
     }
 
     &:before {
