@@ -1,5 +1,7 @@
 mixin date-picker-card(option = {})
   -
-    const { id = '', pickerType = '' } = option
+    const { id = '', pickerType = '', amount = '' } = option;
 
-  .date-picker__wrap(id=`pickerWrap-${id}-${pickerType}`)
+    const cls = pickerType === 'double' && amount === '2' ? 'second' : '';
+
+  .date-picker__wrap(id=`pickerWrap-${id}-${pickerType}` class=`${cls}`)

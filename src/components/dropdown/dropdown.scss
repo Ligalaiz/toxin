@@ -36,11 +36,18 @@
     border: 1px solid $dark-shade-25;
     padding: 1.5rem 1.3rem 1.3rem;
 
+    transition: $anim;
+
     @include text;
     text-align: left;
     line-height: 1;
 
     background-color: transparent;
+
+    &:hover,
+    &:focus {
+      border-color: $dark-shade-50;
+    }
 
     &--date {
       @include fontz(1.4rem, 1, $dark-shade-75);
@@ -72,9 +79,11 @@
     &.active {
       border-bottom-left-radius: unset;
       border-bottom-right-radius: unset;
+      border-color: $dark-shade-50;
 
       & + .dropdown__list {
         display: block;
+        border-color: $dark-shade-50;
       }
     }
 

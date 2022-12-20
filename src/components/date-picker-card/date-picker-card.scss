@@ -9,6 +9,11 @@
   box-shadow: 0 0 2.5rem $black-20;
   background-color: $white;
 
+  &__wrap.second {
+    position: relative;
+    right: 113%;
+  }
+
   &__field {
     display: none;
   }

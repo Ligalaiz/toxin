@@ -31,5 +31,3 @@ const createElem = (element, className, child, parent, ...dataAttr) => {
 };
 
 export { createElem };
-
-// create('div', null, null, null, ['id', 'stepDisplay']),

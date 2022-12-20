@@ -10,6 +10,6 @@ mixin pagination(option = {})
     .pagination__wrap
       ul.pagination__list
         each val, key in pagination
-          li.pagination__item(class=`${val === active ? 'active' : ''}`)= val
+          li.pagination__item(class=`${val === active ? 'active' : ''}${val === '...' ? 'pagination__item--middle' : ''}`)= val
       button.pagination__next
     p.pagination__text 1 – 12 из 100+ вариантов аренды

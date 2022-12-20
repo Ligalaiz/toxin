@@ -9,8 +9,8 @@ const disabledBtn = (id, state) => {
     return acc;
   }, false);
 
-  clearBtn.disabled = !isExist;
-  acceptBtn.disabled = !isExist;
+  if (clearBtn) clearBtn.disabled = !isExist;
+  if (acceptBtn) acceptBtn.disabled = !isExist;
 };
 
 export { disabledBtn };

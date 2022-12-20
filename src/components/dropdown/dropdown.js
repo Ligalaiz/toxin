@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener('click', ({ target }) => {
-  if (target?.id.match('dropdown')) {
+  if (target?.closest('button')?.id?.match('dropdown')) {
     const [_, type, id] = target.id.split('-');
 
     document.getElementById(`dropdown-${type}-${id}`).classList.toggle('active');

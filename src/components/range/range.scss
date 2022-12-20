@@ -42,11 +42,12 @@
 
     &::-webkit-slider-thumb {
       pointer-events: all;
-      width: 3rem;
-      height: 3rem;
+      width: 4rem;
+      height: 4rem;
       border-radius: 0;
       border: 0 none;
       appearance: none;
+      cursor: pointer;
     }
   }
 

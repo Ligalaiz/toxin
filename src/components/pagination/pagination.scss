@@ -31,6 +31,7 @@
 
     @include fontz(1.2rem, 1, $dark-shade-50);
 
+    transition: $anim;
     cursor: pointer;
 
     &.active {
@@ -38,6 +39,20 @@
       font-weight: 700;
 
       background: linear-gradient(180deg, $purple 0%, $blue 100%);
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+
+    &:hover {
+      background-color: $dark-shade-10;
+    }
+
+    &--middle {
+      &:hover {
+        background-color: unset;
+      }
     }
   }
 
@@ -65,6 +80,7 @@
       border-bottom: 0.2rem solid $white;
 
       transform: translateY(-50%) rotate(-45deg);
+      transition: $anim;
     }
 
     &:after {
@@ -74,6 +90,17 @@
       background-color: $white;
 
       transform: translateY(-50%);
+      transition: $anim;
+    }
+
+    &:hover {
+      &:before {
+        transform: translate(9%, -50%) rotate(-45deg) scale(1.2);
+      }
+
+      &:after {
+        transform: translateY(-50%) scale(1.2);
+      }
     }
   }
 
