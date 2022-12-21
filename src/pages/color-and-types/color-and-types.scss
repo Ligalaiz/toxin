@@ -3,11 +3,21 @@
 .ui-color-type {
   &__wrap {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 113.9rem;
+    max-width: 143.9rem;
     margin: 0 auto;
+    padding: 0 1.5rem;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8rem;
+
+    @media (min-width: 850px) {
+      flex-wrap: unset;
+      justify-content: space-between;
+      gap: unset;
+    }
   }
 }
 
@@ -52,7 +62,7 @@
     &--purple {
       background-color: $purple;
     }
-    
+
     &--green {
       background-color: $green;
     }
@@ -76,6 +86,11 @@
   align-items: flex-start;
   row-gap: 5.1rem;
   max-width: 44.3rem;
+  margin-bottom: 6rem;
+
+  @media (min-width: 850px) {
+    margin-bottom: unset;
+  }
 
   &__item {
     display: flex;

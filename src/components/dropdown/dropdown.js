@@ -6,7 +6,8 @@ window.addEventListener('load', () => {
   const activeDropdown = ['dropdown-bedroom-1', 'dropdown-expand-2', 'dropdown-guest-1', 'dropdown-guest-2'];
 
   activeDropdown.forEach((activeClass) => {
-    document.getElementById(activeClass).classList.add('active');
+    const el = document.getElementById(activeClass);
+    if (el) el.classList.add('active');
   });
 });
 

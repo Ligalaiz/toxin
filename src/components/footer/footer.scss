@@ -5,8 +5,13 @@
 
   background-color: $white;
 
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
+
   &--tablet {
     padding-top: unset;
+    background-color: $grey;
   }
 
   &__wrap {
@@ -30,11 +35,12 @@
     max-width: 119rem;
     padding: 0 1.5rem;
     margin: 0 auto;
+    width: 100%;
+    column-gap: 1rem;
 
-    @media (max-width: 1062px) {
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 2rem;
+    @media (min-width: 1062px) {
+      justify-content: flex-start;
+      column-gap: 4rem;
     }
   }
 
@@ -43,6 +49,7 @@
     flex-direction: column;
     gap: 1rem;
     max-width: 26rem;
+    width: 100%;
   }
 
   &__logo {
@@ -61,7 +68,21 @@
     text-align: left;
   }
 
-  &__nav,
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 4rem;
+    max-width: 86rem;
+    width: 100%;
+
+    @media (min-width: 1090px) {
+      flex-wrap: unset;
+      row-gap: unset;
+    }
+  }
+
+  &__navigation,
   &__about,
   &__support,
   &__subscribe {
@@ -69,24 +90,25 @@
     flex-direction: column;
     gap: 2.1rem;
     padding-top: 0.5rem;
-    min-width: 16rem;
+    min-width: 15rem;
   }
 
   &__subscribe {
-    max-width: 26rem;
     gap: unset;
+    max-width: unset;
 
-    & .field--subscr {
-      padding: 0;
+    @media (min-width: 1090px) {
+      max-width: 26rem;
     }
-  }
 
-  @media (max-width: 768px) {
-    padding-top: 0;
+    & .field--footer {
+      padding: 0;
+      max-width: unset;
+    }
   }
 }
 
-.nav-footer,
+.navigation-footer,
 .about-footer,
 .support-footer,
 .subscribe-footer {
@@ -101,7 +123,7 @@
   }
 }
 
-.nav-footer__item,
+.navigation-footer__item,
 .about-footer__item,
 .support-footer__item {
   @include fontz(1.4rem, 1.21, $dark-shade-50);
@@ -120,6 +142,7 @@
 }
 
 .copyright-footer {
+  justify-content: space-between;
   align-items: center;
   padding: 2.6rem 1.5rem 2rem;
 
@@ -129,6 +152,12 @@
     align-items: center;
     padding: 12rem 0;
     max-width: 76.8rem;
+
+    background-color: $white;
+
+    @media (min-width: 1062px) {
+      gap: unset;
+    }
   }
 
   &__logo {

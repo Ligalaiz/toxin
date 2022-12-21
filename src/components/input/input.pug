@@ -1,18 +1,18 @@
 mixin input(attr)
   -
-    const {type = 'text', placeholder = '', cls = '', label = '', val = '', desc = '', modify = '', id = '' } = attr;
+    const {type = 'text', placeholder = '', cls = '', label = '', val = '', desc = '', modify = '', id = '', extraCls = '' } = attr;
     const pattern = {
       email: '[^ @]*@[^ @]*',
       text: '',
       date: ''
     }
 
-  label.field(class=`${cls ? `field--${cls}` : ''}${ modify ? ` ${modify}` : '' }`)
+  label.field(class=`${cls ? `field--${cls}` : ''}${ modify ? ` ${modify}` : '' }${extraCls ? ` field--${extraCls}` : ''}`)
     .field__wrap
       if label !== ''
         p.field__label= label
       if desc !== ''
         p.field__desc= desc
-    if (modify === 'subscr')
-      button.field__btn-subscr
-    input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`, id=`${id}`)
+      if (modify === 'subscr')
+        button.field__btn-subscr
+      input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`, id=`${id}`)

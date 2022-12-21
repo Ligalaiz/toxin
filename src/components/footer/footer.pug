@@ -57,7 +57,7 @@ mixin footer(option = {})
       },
     ]
 
-  .footer
+  .footer(class=`${type === 'tablet' ? ' footer--tablet' : '' }`)
     if type === 'desctop'
       .footer__wrap.footer__wrap--top
         .footer__container
@@ -65,26 +65,27 @@ mixin footer(option = {})
             .footer__logo
               img(src=`../../assets/img/full-logo.svg`, alt='logo')
             p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-          .footer__nav.nav-footer
-            p.nav-footer__title Навигация
-            ul.nav-footer__list
-              each val, key in navList
-                li.nav-footer__item(class=`${val.cls ? ` nav-footer__item--${val.cls}` : ''}`)= val.title
-          .footer__about.about-footer
-            p.about-footer__title О нас
-            ul.about-footer__list
-              each val, key in aboutList
-                li.about-footer__item(class=`${val.cls ? ` about-footer__item--${val.cls}` : ''}`)= val.title
-          .footer__support.support-footer
-            p.support-footer__title Служба поддержки
-            ul.support-footer__list
-              each val, key in supportList
-                li.support-footer__item(class=`${val.cls ? ` support-footer__item--${val.cls}` : ''}`)= val.title
-          .footer__subscribe.subscribe-footer
-            p.subscribe-footer__title Подписка
-            p.subscribe-footer__subtitle Получайте специальные предложения и новости сервиса
-            +input({ type: 'email', placeholder: 'Eamil', cls: 'subscr' })
-    .footer__wrap
+          nav.footer__nav
+            .footer__navigation.navigation-footer
+              p.navigation-footer__title Навигация
+              ul.navigation-footer__list
+                each val, key in navList
+                  li.navigation-footer__item(class=`${val.cls ? ` nav-footer__item--${val.cls}` : ''}`)= val.title
+            .footer__about.about-footer
+              p.about-footer__title О нас
+              ul.about-footer__list
+                each val, key in aboutList
+                  li.about-footer__item(class=`${val.cls ? ` about-footer__item--${val.cls}` : ''}`)= val.title
+            .footer__support.support-footer
+              p.support-footer__title Служба поддержки
+              ul.support-footer__list
+                each val, key in supportList
+                  li.support-footer__item(class=`${val.cls ? ` support-footer__item--${val.cls}` : ''}`)= val.title
+            .footer__subscribe.subscribe-footer
+              p.subscribe-footer__title Подписка
+              p.subscribe-footer__subtitle Получайте специальные предложения и новости сервиса
+              +input({ type: 'email', placeholder: 'Email', cls: 'subscr', modify: 'subscr', extraCls: 'footer' })
+    .footer__wrap(class=`${type === 'tablet' ? ' footer__wrap--tablet' : '' }`)
       .footer__container.footer__copyright.copyright-footer(class=`${type === 'tablet' ? ' copyright-footer--tablet' : '' }`)
         .footer__logo.copyright-footer__logo(class=`${type === 'tablet' ? ` copyright-footer__logo--tablet` : ''}`)
             img(src=`../../assets/img/full-logo.svg`, alt='logo')

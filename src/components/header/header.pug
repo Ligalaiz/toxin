@@ -2,7 +2,7 @@ include ../../components/button/button
 
 mixin header(option = {})
   -
-    const { status = 'logout' } = option
+    const { status = 'logout', id = '' } = option
 
     const navList = [
       {
@@ -43,7 +43,15 @@ mixin header(option = {})
           .header__user
             p Юлий Цезарь
       .header__mobile.mobile-header
-        button.mobile-header__btn
+        button(class="mobile-header__switcher" type="button" id=`menuSwitcher-${id}`)
+          span
         ul.mobile-header__list
           each val, key in navList
             li.mobile-header__item(class=`${val.cls ? ` mobile-header__item--${val.cls}` : ''}${val.cls === 'about' ? ` active` : ''}`)= val.title
+          if status === 'logout'
+            li.header__auth
+              +button({ content: 'войти', type: 'thin', link: 'https://ligalaiz-toxin.netlify.app/sign-in' })
+              +button({ content: 'Зарегистрироваться', link: 'https://ligalaiz-toxin.netlify.app/registration' })
+          if status === 'login'
+            .header__user
+              p Юлий Цезарь
