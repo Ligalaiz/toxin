@@ -132,8 +132,8 @@ class RenderDatePicker {
   }
 
   renderCurrentDate() {
-    if (!this.from && !this.to) this.textField.textContent = 'дд.мм.гггг';
-    if (this.from) this.textField.textContent = this.from.split('-').reverse().join('.');
+    if (!this.from && !this.to && this.textField) this.textField.textContent = 'дд.мм.гггг';
+    if (this.from && this.textField) this.textField.textContent = this.from.split('-').reverse().join('.');
     if (this.from && this.to && this.pickerType === 'double')
       this.textFieldSec.textContent = this.to.split('-').reverse().join('.');
     if (this.from && this.to && this.pickerType === 'range') {

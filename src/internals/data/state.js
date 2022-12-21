@@ -15,6 +15,11 @@ const state = {
       { count: 0, name: 'Дети' },
       { count: 0, name: 'Младенцы' },
     ],
+    4: [
+      { count: 2, name: 'Взрослые' },
+      { count: 1, name: 'Дети' },
+      { count: 0, name: 'Младенцы' },
+    ],
   },
 
   bedroom: {

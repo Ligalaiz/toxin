@@ -7,13 +7,15 @@
 }
 
 .cards {
+  padding-bottom: 4rem;
+
   &__container {
     display: grid;
     grid-template-columns: minmax(320px, 380px) minmax(320px, 380px) 320px;
     gap: 4rem;
     max-width: 119rem;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 10rem;
     padding: 0.7rem 1.5rem 0;
 
     @media (max-width: 1100px) {
@@ -38,4 +40,8 @@
       margin: 0 auto;
     }
   }
+}
+
+.date-picker__wrap.show {
+  display: block;
 }

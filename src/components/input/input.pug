@@ -13,6 +13,6 @@ mixin input(attr)
         p.field__label= label
       if desc !== ''
         p.field__desc= desc
-      if (modify === 'subscr')
-        button.field__btn-subscr
-      input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`, id=`${id}`)
+    if (modify === 'subscr')
+      button.field__btn-subscr
+    input(type=`${type}`, class=`field__input ${cls}-input`, value=`${val}`, placeholder=`${placeholder}`, pattern=`${pattern[type]}`, id=`${id}`)

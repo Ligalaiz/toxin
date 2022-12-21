@@ -5,8 +5,20 @@ mixin room-card(option = {})
     const {numb = '0', type = '', count = '0', rate = 4, price = '', link = '' } = option
 
   .room-card
-    .room-card__img
-      img(src=`../../assets/img/room-${numb}.jpg`, alt='room')
+    //- .room-card__img
+    //-   img(src=`../../assets/img/room-${numb}.jpg`, alt='room')
+    .room-card__gallery
+      .slider
+        .slider__wrap
+          .slider__slides
+            .slider__item.slider__item--first.active
+              .slider__slide.slider__slide--first.slide-slider
+            .slider__item.slider__item--second
+              .slider__slide.slider__slide--second.slide-slider
+          button.slider__btn.slider__btn--prev(type="button")
+            span
+          button.slider__btn.slider__btn--next(type="button")
+            span
     a.room-card__desc(href=link)
       .room-card__wrap
         p.room-card__title

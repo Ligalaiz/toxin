@@ -74,7 +74,8 @@ class Datepicker {
 
   acceptPickDate() {
     this.renderObj.renderCurrentDate.call(this);
-    document.getElementById(`dropdown-${this.id}`).classList.remove('active');
+    const pickElem = document.getElementById(`dropdown-${this.id}`);
+    if (pickElem) pickElem.classList.remove('active');
   }
 
   static renderTemplate(id) {
@@ -96,6 +97,7 @@ window.addEventListener('load', () => {
     const datePickersParent = document.querySelectorAll('[id^=pickerWrap]');
     datePickersParent.forEach((item) => {
       Datepicker.renderTemplate(item.id);
+      console.log(datePickersParent);
 
       const idArr = item.id.split('-');
       const currentId = `${idArr[1]}-${idArr[2]}`;
@@ -104,6 +106,8 @@ window.addEventListener('load', () => {
       datepicker.render();
 
       document.addEventListener('click', ({ target }) => {
+        console.log(target.id);
+        console.log(currentId);
         if (target.id === `prevBtn-${currentId}`) datepicker.changeMonth('dec');
         if (target.id === `nextBtn-${currentId}`) datepicker.changeMonth();
         if (target.id === `btnClear-${currentId}`) datepicker.clearPickDate();

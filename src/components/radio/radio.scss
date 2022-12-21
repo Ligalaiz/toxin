@@ -67,7 +67,8 @@
         border-radius: 50%;
         margin-right: 0.5em;
 
-        transform: translateY(-50%);
+        transform: translateY(-50%) scale(-0.1);
+        transition: $anim;
       }
 
       &:hover {
@@ -86,6 +87,7 @@
 
       &:after {
         background-color: $purple;
+        transform: translateY(-50%) scale(1);
       }
     }
   }

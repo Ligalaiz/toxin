@@ -8,7 +8,7 @@ mixin search-card(option = {})
   .search-card(class=`${modify ? `${modify}__search-card` : ''}`)
     p.search-card__title Найдём номера под ваши пожелания
     .search-card__wrap
-      +dropdown({ title: 'Прибытие', content: 'дд.мм.гггг', cls: 'date' })
-      +dropdown({ title: 'Выезд', content: 'дд.мм.гггг', cls: 'date' })
-    +dropdown({ title: 'Гости', content: 'Сколько гостей', cls: 'guest', type: 'guest', modify: 'search-card__dropdown' })
+      +dropdown({ title: 'Прибытие', pickerType: 'double', cls: 'date',type: 'date', id: '1' })
+      +dropdown({ title: 'Выезд', cls: 'date', type: 'date', pickerType: 'double', id: '2' })
+    +dropdown({ title: 'Гости', cls: 'bedroom', type: 'guest', modify: 'search-card__dropdown', id: '3' })
     +button({ content: 'Подобрать номер', type: 'pay', cls: 'search-card', link: 'https://ligalaiz-toxin.netlify.app/search'})
