@@ -21,7 +21,7 @@ mixin dropdown(option = {})
           p.dropdown__title= title
         if desc !== ''
           p.dropdown__desc= desc
-    button.dropdown__btn(type='button' class=`${cls}-dropdown${style ? style : ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}` id=`dropdown-${type}-${id}`)
+    button.dropdown__btn(type='button' class=`${cls}-dropdown${style || ''}${status ? ' active' : ''}${type === 'expand' ? ' dropdown__btn--expand' : ''}` id=`dropdown-${type}-${id}`)
       span.dropdown__text(class=`${type === 'expand' ? 'dropdown__text--expand' : ''}` id=`text-${type}-${id}`)= type === 'expand' ? content : ''
     if list.length !== 0 && type !== 'expand'
       ul.dropdown__list.list-dropdown(id=`droplist-${type}-${id}`)
