@@ -1,0 +1,190 @@
+@use '../../assets/styles/internals/index';
+
+.slider {
+  position: relative;
+
+  min-height: 15.1rem;
+  border-width: 0.3rem;
+
+  color: $white;
+
+  overflow: hidden;
+
+  &__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__slides {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 49%;
+    transform: translateY(-50%);
+
+    width: 1.6rem;
+    height: 2.7rem;
+    border: none;
+
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+    background-color: transparent;
+
+    cursor: pointer;
+    transition: $anim;
+
+    &:hover {
+      background: $grey-light;
+    }
+
+    & > span {
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 0.2rem solid $white;
+        border-top: none;
+        border-right: none;
+      }
+
+      &:before {
+        left: 2.2rem;
+      }
+
+      &:after {
+        left: 3rem;
+      }
+    }
+
+    &--next {
+      transform: translateY(-50%) rotate(180deg);
+
+      right: 0.6rem;
+    }
+
+    &--prev {
+      left: 0.6rem;
+    }
+  }
+
+
+  &__bar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+.bar-slider {
+  &__item {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 0.1rem solid $white;
+
+    cursor: pointer;
+    outline: none;
+
+    &.active {
+      background-color: $white;
+    }
+  }
+}
+
+.slides-slider {
+  &__img-wrap {
+    position: relative;
+
+    width: 27rem;
+    padding-bottom: 15.1rem;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 15.1rem;
+
+    animation: 1.4s linear;
+
+    &--first {
+      background-color: purple;
+    }
+
+    &--second {
+      background-color: blue;
+    }
+
+    &--third {
+      background-color: yellow;
+    }
+  }
+}
+
+.active,
+.next {
+  display: flex;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
