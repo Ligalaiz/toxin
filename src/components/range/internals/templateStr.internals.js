@@ -1,7 +1,7 @@
 const templateStr = `
     <div class="range">
       <div class="range__head">
-        <div class="range__title">Range Slider</div>
+        <div class="range__title">Диапазон цены</div>
         <div class="range__count">
           <span id="fromField"></span>
           <span> - </span>

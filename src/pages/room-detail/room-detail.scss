@@ -127,14 +127,16 @@
         margin-top: unset;
 
         &__title {
-          padding-left: 2rem;
+          text-align: center;
+          padding-left: 0;
 
           @include header-2;
           text-transform: capitalize;
 
-          @media (max-width: 482px) {
-            text-align: center;
-            padding-left: 0;
+          @media (min-width: 482px) {
+            text-align: unset;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
           }
         }
       }
@@ -199,10 +201,15 @@
 
 .info {
   &--room-detail {
-    @media (max-width: 482px) {
-      padding-left: 0;
+    text-align: center;
+    padding-left: 0;
 
-      text-align: center;
+    @media (min-width: 482px) {
+      text-align: unset;
+    }
+
+    & .info__title {
+      margin-bottom: 1.8rem;
     }
   }
 }
