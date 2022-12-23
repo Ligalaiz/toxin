@@ -24,7 +24,7 @@ block content
         .content__item.item-content.item-content--left
           +input({ type: 'email', placeholder: 'Email', cls: 'default', label: 'Text field', desc: 'Default' })
           +input({ placeholder: 'Email', cls: 'active', label: 'Text field', desc: 'Hover / Focus', val: 'This is pretty awesome' })
-          +dropdown({ title: 'Dropdown', cls: 'bedroom', type: 'guest', id: '3' })
+          +dropdown({ title: 'Dropdown', cls: 'guest', type: 'guest', id: '3' })
           +input({ placeholder: 'дд.мм.гггг', cls: 'masked', label: 'Masked Text field', id: 'dateMask' })
           .item-content__date
               +dropdown({ title: 'Date Dropdown', pickerType: 'double', cls: 'date',type: 'date', id: '1' })
@@ -36,7 +36,7 @@ block content
             +checkbox({ title: 'Checkbox buttons', content: 'Можно курить', cls:'smoke' })
             +checkbox({ content: 'Можно с питомцами', cls:'pet', status: true })
             +checkbox({ content: 'Можно пригласить гостей (до 10 человек)', cls:'guests', status: true })
-          +radio({ title: 'Radio buttons', content: { men: 'Мужчина', women: 'Женчина' } })
+          +radio({ title: 'Radio buttons', content: { men: 'Мужчина', women: 'Женщина' } })
           .item-content__toggle-bar
             +toggle({ title: 'Toggle', content: 'Получать спецпредложения', status: true })
             +toggle({ content: 'Получать спецпредложения' })
@@ -67,9 +67,9 @@ block content
           +dropdown({ title: 'Dropdown', desc: 'Default', cls: 'bedroom', type: 'bedroom', id: '2' })
           +dropdown({ title: 'Dropdown', desc: 'Expanded', cls: 'bedroom', type: 'bedroom', id: '1' })
         .content__item
-          +dropdown({ title: 'Dropdown', cls: 'bedroom', type: 'guest', id: '1' })
+          +dropdown({ title: 'Dropdown', cls: 'guest', type: 'guest', id: '1' })
         .content__item
-          +dropdown({ title: 'Dropdown', cls: 'bedroom', type: 'guest', id: '2' })
+          +dropdown({ title: 'Dropdown', cls: 'guest', type: 'guest', id: '2' })
         .content__item.content__item--expand
           +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand', id: '1' })
           +dropdown({ content: 'Expandable Checkbox list', cls: 'expand', type: 'expand', id: '2' })

@@ -116,10 +116,10 @@
 }
 
 .mobile-header {
-  display: none;
+  display: block;
 
-  @media (max-width: 948px) {
-    display: block;
+  @media (min-width: 947.99px) {
+    display: none;
   }
 
   &__list {
@@ -141,6 +141,14 @@
 
     & .header__auth {
       padding: 1.5rem 2rem;
+    }
+
+    &--1 {
+      top: 21rem;
+    }
+
+    &--2 {
+      top: 32rem;
     }
   }
 

@@ -1,6 +1,8 @@
 @use '../../assets/styles/internals/index';
 
 .content {
+  padding-top: 0.4rem;
+
   &__container {
     max-width: 118.8rem;
     width: 100%;
@@ -23,7 +25,7 @@
     }
 
     @media (min-width: 1190px) {
-      column-gap: 9.5rem;
+      column-gap: 9.8rem;
       justify-items: unset;
     }
   }
@@ -34,7 +36,7 @@
 
     &--bedroom {
       max-width: 26.6rem;
-      margin-bottom: 2.1rem;
+      margin-bottom: 1.7rem;
     }
 
     &--expand {
@@ -48,7 +50,7 @@
 
     &--rich {
       max-width: 26rem;
-      padding-top: 1.6rem;
+      padding-top: 1.7rem;
       margin-bottom: 3rem;
 
       @media (min-width: 768px) {
@@ -58,7 +60,7 @@
 
     &--comment {
       max-width: unset;
-      padding: 1.9rem 0 0 3rem;
+      padding-top: 1.9rem;
 
       @media (min-width: 980px) {
         max-width: 71.1rem;
@@ -74,7 +76,7 @@
     display: flex;
     gap: 2rem;
     padding-top: 2rem;
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.9rem;
   }
 
   &__rating {
@@ -88,7 +90,6 @@
     margin-bottom: 4rem;
 
     @media (min-width: 768px) {
-      padding-left: 2.9rem;
       margin-bottom: unset;
     }
   }
@@ -105,12 +106,12 @@
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
-    margin-top: 4rem;
+    margin-top: 4.1rem;
     margin-bottom: 4.6rem;
   }
 
   &--right {
-    padding-left: 0.4rem;
+    padding-left: 0.2rem;
     margin-bottom: 3rem;
 
     @media (min-width: 980px) {

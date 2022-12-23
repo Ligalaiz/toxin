@@ -3,8 +3,8 @@
 .date-picker {
   max-width: 32rem;
   width: 100%;
-  padding: 1rem 2rem;
-  margin: 0 auto 4.2rem;
+  padding: 1rem 2rem 1.2rem;
+  margin: 0 auto 4rem;
 
   box-shadow: 0 0 2.5rem $black-20;
   background-color: $white;
@@ -41,7 +41,7 @@
     &:after {
       content: '';
       position: absolute;
-      top: 50%;
+      top: 53%;
     }
 
     &:before {
@@ -82,22 +82,22 @@
   &__prev {
     &:before {
       transform: translateY(-50%) rotate(130deg);
-      left: 32%;
+      left: 18%;
     }
 
     &:after {
-      left: 32%;
+      left: 18%;
     }
   }
 
   &__next {
     &:before {
       transform: translateY(-50%) rotate(-45deg);
-      right: 32%;
+      right: 18%;
     }
 
     &:after {
-      right: 32%;
+      right: 18%;
     }
   }
 
@@ -108,8 +108,9 @@
   &__date {
     display: flex;
     justify-content: space-between;
-    min-width: 13rem;
-    gap: 1rem;
+    padding-top: 0.4rem;
+    min-width: 11rem;
+    gap: 0.3rem;
   }
 }
 

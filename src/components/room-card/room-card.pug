@@ -18,8 +18,7 @@ mixin room-card(option = {})
           if type !== ''
             span.room-card__title--color= type
         p.room-card__subtitle
-          span.room-card__subtitle--thick= price
-          |₽
+          span.room-card__subtitle--thick= `${price}₽`
           |
           | в сутки
       .room-card__rating.rating-room-card

@@ -17,10 +17,10 @@ mixin book-card
     .book-card__wrap.book-card__wrap--arrive
       +dropdown({ title: 'Прибытие', pickerType: 'double', cls: 'date',type: 'date', id: '3' })
       +dropdown({ title: 'Выезд', cls: 'date', type: 'date', pickerType: 'double', id: '4' })
-    +dropdown({ title: 'Гости', cls: 'bedroom', type: 'guest', id: '4', modify: 'book-card__dropdown' })
+    +dropdown({ title: 'Гости', cls: 'guest', type: 'guest', id: '4', modify: 'book-card' })
     .book-card__desc.desc-book-card
       .desc-book-card__wrap
-        p.desc-book-card__item 9 990₽ х 4 суток
+        p.desc-book-card__item.desc-book-card__item--price 9 990₽ х 4 суток
         p.desc-book-card__item 39 960₽
       .desc-book-card__wrap
         p.desc-book-card__item.desc-book-card__item--info Сбор за услуги: скидка 2&nbsp;179₽

@@ -3,12 +3,16 @@
 .slider {
   position: relative;
 
-  min-height: 15.1rem;
-  border-width: 0.3rem;
+  min-height: 15.3rem;
+  border-radius: 0.4rem 0.4rem 0 0;
 
   color: $white;
 
   overflow: hidden;
+
+  &:hover &__btn {
+    opacity: 1;
+  }
 
   &__wrap {
     position: absolute;
@@ -40,9 +44,10 @@
 
     cursor: pointer;
     transition: $anim;
+    opacity: 0;
 
     &:hover {
-      background: $grey-light;
+      background: $black-60;
     }
 
     & > span {
@@ -80,7 +85,6 @@
     }
   }
 
-
   &__bar {
     position: absolute;
     bottom: 0;
@@ -89,8 +93,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 1rem;
-    padding: 1rem;
+    column-gap: 0.3rem;
+    padding: 1.5rem;
   }
 }
 
@@ -103,6 +107,11 @@
 
     cursor: pointer;
     outline: none;
+    transition: $anim;
+
+    &:hover {
+      background-color: $white-95;
+    }
 
     &.active {
       background-color: $white;
@@ -115,7 +124,7 @@
     position: relative;
 
     width: 27rem;
-    padding-bottom: 15.1rem;
+    padding-bottom: 15.2rem;
   }
 
   &__item {
@@ -124,7 +133,6 @@
     display: none;
     justify-content: center;
     align-items: center;
-    min-height: 15.1rem;
 
     animation: 1.4s linear;
 

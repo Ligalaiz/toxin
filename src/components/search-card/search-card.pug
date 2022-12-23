@@ -10,5 +10,5 @@ mixin search-card(option = {})
     .search-card__wrap
       +dropdown({ title: 'Прибытие', pickerType: 'double', cls: 'date',type: 'date', id: '1' })
       +dropdown({ title: 'Выезд', cls: 'date', type: 'date', pickerType: 'double', id: '2' })
-    +dropdown({ title: 'Гости', cls: 'bedroom', type: 'guest', modify: 'search-card__dropdown', id: '3' })
+    +dropdown({ title: 'Гости', cls: 'guest', type: 'guest', modify: 'search-card', id: '3' })
     +button({ content: 'Подобрать номер', type: 'pay', cls: 'search-card', link: 'https://ligalaiz-toxin.netlify.app/search'})

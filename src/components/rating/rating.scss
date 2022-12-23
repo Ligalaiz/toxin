@@ -1,12 +1,13 @@
 @use '../../assets/styles/internals/index';
 
 .rating {
-  margin-top: 4rem;
+  margin-top: 4.2rem;
 
   &__container {
     display: flex;
     justify-content: flex-start;
     gap: 2rem;
+    padding-left: 0.3rem;
   }
 
   &__title {
@@ -18,7 +19,7 @@
   &__wrap {
     display: flex;
     justify-content: flex-end;
-    gap: 0.5rem;
+    gap: 0.43rem;
     unicode-bidi: bidi-override;
     direction: rtl;
   }

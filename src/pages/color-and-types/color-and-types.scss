@@ -17,6 +17,8 @@
       flex-wrap: unset;
       justify-content: space-between;
       gap: unset;
+      padding-top: 0.5rem;
+      max-width: 116.9rem;
     }
   }
 }
@@ -135,6 +137,8 @@
     }
 
     &--h2 {
+      padding-top: 0.2rem;
+
       font-size: 1.9rem;
       line-height: 1.21;
     }
@@ -142,7 +146,6 @@
     &--h3 {
       font-size: 1.2rem;
       line-height: 1.25;
-      letter-spacing: -0.12rem;
       text-transform: uppercase;
     }
 

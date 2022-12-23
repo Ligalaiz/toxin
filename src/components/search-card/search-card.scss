@@ -31,8 +31,10 @@
 
     @include header-1;
   }
+}
 
-  &__dropdown {
+.dropdown {
+  &--search-card {
     margin-bottom: 3.2rem;
   }
 }

@@ -45,7 +45,7 @@ mixin header(option = {})
       .header__mobile.mobile-header
         button(class="mobile-header__switcher" type="button" id=`menuSwitcher-${id}`)
           span
-        ul.mobile-header__list
+        ul.mobile-header__list(class=`mobile-header__list--${id}`)
           each val, key in navList
             li.mobile-header__item(class=`${val.cls ? ` mobile-header__item--${val.cls}` : ''}${val.cls === 'about' ? ` active` : ''}`)= val.title
           if status === 'logout'

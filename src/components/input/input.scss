@@ -63,7 +63,8 @@
     }
 
     &:before {
-      right: 30%;
+      right: 34%;
+      top: 50%;
 
       width: 1rem;
       height: 1rem;
@@ -96,7 +97,16 @@
 
   &--subscr {
     max-width: 26.6rem;
-    padding-top: 1.9rem;
+    padding-top: 1.7rem;
+  }
+
+  &--masked {
+    margin-bottom: 2rem;
+  }
+  
+  &--masked &__wrap,
+  &--active &__wrap {
+    margin-bottom: 0.5rem;
   }
 }
 

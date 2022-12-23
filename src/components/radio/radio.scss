@@ -2,7 +2,7 @@
 
 .radio {
   &__title {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.5rem;
 
     @include header-3;
   }
@@ -10,7 +10,7 @@
   &__list {
     display: flex;
     justify-content: flex-start;
-    gap: 2.2rem;
+    gap: 2rem;
   }
 
   &__item {
@@ -48,7 +48,7 @@
         height: 2rem;
         border: 1px solid $dark-shade-25;
         border-radius: 50%;
-        margin-right: 0.5em;
+        margin-right: 0.9rem;
 
         background-repeat: no-repeat;
         background-position: center center;
